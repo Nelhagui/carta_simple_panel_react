@@ -16,8 +16,8 @@ export const SideBarMenu = () => {
                     <Link to="/categorias">
                         <li>Categorías</li>
                     </Link>
-                    <Link to="/pedidos">
-                        <li>Pedidos</li>
+                    <Link to="/productos">
+                        <li>Producto</li>
                     </Link>
                 </ul>
             </nav>

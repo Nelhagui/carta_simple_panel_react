@@ -4,6 +4,8 @@ import { Nav } from "./components/nav/Nav";
 import { SideBarMenu } from "./components/sidebarMenu/SideBarMenu";
 import { Home } from "./views/home/Home";
 import { Producto } from "./views/producto/Producto";
+import { Ordenes } from "./views/ordenes/Ordenes";
+import { Cartas } from "./views/cartas/Cartas";
 
 function App() {
     return (
@@ -20,8 +22,9 @@ function App() {
                                 exact
                                 component={Producto}
                             />
-                            <Route path="/entrada/editar/:id" exact />
+                            <Route path="/cartas" exact component={Cartas} />
                             <Route path="/categorias" exact />
+                            <Route path="/ordenes" exact component={Ordenes} />
                         </Switch>
                     </div>
                 </div>

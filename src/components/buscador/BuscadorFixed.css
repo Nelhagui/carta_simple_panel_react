@@ -1,0 +1,22 @@
+.cont-buscador-fixed {
+    padding-left: 367px;
+    height: auto;
+    background: linear-gradient(0deg, #EDF2F5, #EDF2F5);
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding-right: 18px;
+    padding-top: 18px;
+    padding-bottom: 11px;
+    background: #EDF2F5;
+    box-shadow: 0px 4px 4px rgba(100, 100, 100, 0.13);
+}
+.cont-buscador-fixed span {
+    width: 20%;
+    display: inline-block;
+    margin-left: 1.5rem;
+}
+.cont-buscador-fixed.cont-ordenar-por {
+    display: inline-block;
+    width: 20%;
+}

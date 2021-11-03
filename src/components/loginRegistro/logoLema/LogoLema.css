@@ -1,0 +1,28 @@
+.cont-identidad {
+    display: flex;
+    width: 50%;
+}
+.cont-logo-lema {
+    margin-top: 78px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 356px;
+    justify-content: center;
+    background-color: white;
+}
+.cont-logo-lema .lema {
+    margin-top: 7px;
+    font-family: Jura;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 31px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #30627D;
+}
+.logo-identidad {
+    max-width: 320px;
+}

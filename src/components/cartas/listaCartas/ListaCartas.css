@@ -1,0 +1,17 @@
+.item-conten li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+.cant-locales{
+    color:#30627D;
+    font-size: 18px;
+    letter-spacing: 0.03em;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: #30627D;
+    line-height: 21pt;
+}
+.cant-locales:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 3px #30627D;
+}

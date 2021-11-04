@@ -12,7 +12,23 @@ export const Buscador = () => {
                 <Filtros/>
             </Modal>
             <div className="cont-buscador">
-                    <input type="text" className="cinput"  placeholder="Buscador"/>
+                <div className="col-52_61">
+                    <input type="text" className="cinput icon-buscar"  placeholder="Buscador"/>
+                </div>
+                <div className="col-5">
+                    <div className="cont-ordenar-por">
+                        <select name="ordenar-por" id="ordenar-por">
+                            <option value="0">Ordenar por más reciente</option>
+                            <option value="1">Más reciente</option>
+                            <option value="2">Más antiguo</option>
+                            <option value="3">A-Z</option>
+                            <option value="4">Z-A</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            {/* <div className="cont-buscador">
+                <input type="text" className="cinput icon-buscar"  placeholder="Buscador"/>
                 <span onClick={()=> setIsOpen(true)} className="btn-filtrar hps">Filtrar</span>
                 <div className="cont-ordenar-por">
                     <select name="ordenar-por" id="ordenar-por">
@@ -23,7 +39,7 @@ export const Buscador = () => {
                         <option value="4">Z-A</option>
                     </select>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }

@@ -10,60 +10,18 @@ export const ListaLocales = () => {
                 <p>Acciones</p>
             </div>
             <div className="cont-lista-items">
-                <div className="item-conten">
-                    <p className="item-nombre-local">Local 1</p>
-                    <p >Avenida Maipú 2100, Vte Lopez</p>
-                    <div className="btn-acctiones-items">
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
+                <div className="item-lista">
+                    <div className="col-4 jc-c">
+                        <p>Local 1</p>
                     </div>
-                </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Local 2</p>
-                    <p >Avenida Maipú 2100, Vte Lopez</p>
-                    <div className="btn-acctiones-items">
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
+                    <div className="col-4">
+                        <p >Avenida Maipú 2100, Vte Lopez</p>
                     </div>
-                </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Local 3</p>
-                    <p >Avenida Maipú 2100, Vte Lopez</p>
-                    <div className="btn-acctiones-items">
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
-                    </div>
-                </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Local 4</p>
-                    <p >Avenida Maipú 2100, Vte Lopez</p>
-                    <div className="btn-acctiones-items">
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
-                    </div>
-                </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Local 5</p>
-                    <p >Avenida Maipú 2100, Vte Lopez</p>
-                    <div className="btn-acctiones-items">
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
-                    </div> 
-                </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Local 6</p>
-                    <p >Avenida Maipú 2100, Vte Lopez</p>
-                    <div className="btn-acctiones-items">
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
-                    </div>
-                </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Local 7</p>
-                    <p >Avenida Maipú 2100, Vte Lopez</p>
-                    <div className="btn-acctiones-items">
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
+                    <div className="col-4">
+                        <div>
+                            <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
+                            <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
+                        </div>
                     </div>
                 </div>
             </div>

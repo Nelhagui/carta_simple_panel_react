@@ -14,7 +14,7 @@ export const AgregarCarta = () => {
                     <label htmlFor="nombre">Modalidad</label>
                     <div className="cont-btn-opciones mt-12">
                         <button className="btn-opciones seleccionado">Take Away</button>
-                        <button className="btn-opciones">Delivery</button>
+                        <button className="btn-opciones" >Delivery</button>
                         <button className="btn-opciones">Consumo en local</button>
                     </div>
                 </div>
@@ -22,14 +22,14 @@ export const AgregarCarta = () => {
                     <label htmlFor="publicar-en">Publicar en</label>
                     <input className="cinput mt-12" type="text" name="publicar-en" placeholder="Escribe el nombre del local" autoComplete="off"/>
                     <div>
-                        <button type="button" className="btn-items-seleccionados hover-t"> <img src="/img/icon-sacar.svg" alt="" /> Martínez</button>
-                        <button type="button" className="btn-items-seleccionados hover-t"> <img src="/img/icon-sacar.svg" alt="" /> Recoleta</button>
+                        <button type="button" className="btn-items-seleccionados"> <img src="/img/icon-sacar.svg" alt="" /> Martínez</button>
+                        <button type="button" className="btn-items-seleccionados"> <img src="/img/icon-sacar.svg" alt="" /> Recoleta</button>
                     </div>
                 </div>
                 <div className="contenedor-input mt-26">
                     <div className="btn-acciones-modal">
                         <button className="btn-principales btn-secundario">DESHACER</button>
-                        <button className="btn-principales btn-primario disabled">CREAR CARTA</button>
+                        <button className="btn-principales btn-primario btn-disabled">CREAR CARTA</button>
                     </div>
                 </div>
             </form>

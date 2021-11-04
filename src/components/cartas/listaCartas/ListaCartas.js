@@ -11,76 +11,59 @@ export const ListaCartas = () => {
                 <p>Acciones</p>
             </div>
             <div className="cont-lista-items">
-                <div className="item-conten">
-                    <p className="item-nombre-local">Carta 1</p>
-                    <ul>
-                        <li>Take away</li>
-                        <li>Delivery</li>
-                        <li>En el local</li>
-                    </ul>
-                    <p className="cant-locales">12 Locales</p>
-                    <div className="btn-acctiones-items">
+                <div className="item-lista">
+                    <div className="col-4">
+                        <p className="item-lista-col-1">Carta 1</p>
+                    </div>
+                    <div className="col-4">
+                        <ul className="lista-modalidad">
+                            <li>Take away</li>
+                            <li>Delivery</li>
+                            <li>En el local</li>
+                        </ul>
+                    </div>
+                    <div className="col-4">
+                        <p className="item-lista-col-3">12 Locales</p>
+                    </div>
+                    <div className="col-4">
                         <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" />
                         <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
                         <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
                     </div>
                 </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Carta 2</p>
-                    <ul>
-                        <li>Take away</li>
-                    </ul>
-                    <p className="cant-locales">4 Locales</p>
-                    <div className="btn-acctiones-items">
+
+                <div className="item-lista">
+                    <div className="col-4">
+                        <p className="item-lista-col-1">Carta 1</p>
+                    </div>
+                    <div className="col-4">
+                        <ul className="lista-modalidad">
+                            <li>Take away</li>
+                        </ul>
+                    </div>
+                    <div className="col-4">
+                        <p className="item-lista-col-3">4 Locales</p>
+                    </div>
+                    <div className="col-4">
                         <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" />
                         <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
                         <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
                     </div>
                 </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Carta 3</p>
-                    <ul>
-                        <li>Take away</li>
-                    </ul>
-                    <p className="cant-locales">3 Locales</p>
-                    <div className="btn-acctiones-items">
-                        <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
+
+                <div className="item-lista">
+                    <div className="col-4">
+                        <p className="item-lista-col-1">Carta 1</p>
                     </div>
-                </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Carta 4</p>
-                    <ul>
-                        <li>Take away</li>
-                        <li>Delivery</li>
-                    </ul>
-                    <p className="cant-locales">1 Locales</p>
-                    <div className="btn-acctiones-items">
-                        <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
+                    <div className="col-4">
+                        <ul className="lista-modalidad">
+                            <li>En el local</li>
+                        </ul>
                     </div>
-                </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Carta 5</p>
-                    <ul>
-                        <li>Delivery</li>
-                    </ul>
-                    <p className="cant-locales">1 Locales</p>
-                    <div className="btn-acctiones-items">
-                        <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
+                    <div className="col-4">
+                        <p className="item-lista-col-3">2 Locales</p>
                     </div>
-                </div>
-                <div className="item-conten">
-                    <p className="item-nombre-local">Carta 6</p>
-                    <ul>
-                        <li>Take away</li>
-                    </ul>
-                    <p className="cant-locales">2 Locales</p>
-                    <div className="btn-acctiones-items">
+                    <div className="col-4">
                         <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" />
                         <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
                         <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />

@@ -7,8 +7,8 @@ export const HeaderLocales = () => {
             <div className="content-header">
                 <h1>Locales</h1>
                 <div>
-                    <button className="btn-secundario">ELIMINAR</button>
-                    <button className="btn-primario">AGREGAR LOCAL</button>
+                    <button className="btn-principales btn-secundario btn-disabled mr-10">ELIMINAR</button>
+                    <button className="btn-principales btn-primario ml-10">AGREGAR LOCAL</button>
                 </div>
             </div>
         </div>

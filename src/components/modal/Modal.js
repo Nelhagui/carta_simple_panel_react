@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import './Modal.css';
 
 const DIV_MODAL_STYLE = {
     position : 'fixed',

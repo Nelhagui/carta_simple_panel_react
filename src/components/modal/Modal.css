@@ -1,0 +1,30 @@
+.btn-acciones-modal {
+    margin-top: 73px;
+    display: flex;
+    justify-content: center;
+}
+.btn-acciones-modal .btn-primario {
+    margin-left: .5rem;
+}
+.btn-acciones-modal .btn-secundario {
+    margin-right: .5rem;
+}
+.btn-cerrar-modal {
+    position : absolute;
+    transition: 0.2s ease;
+    -moz-transition: 0.2s ease; /* Firefox */
+    -webkit-transition: 0.2s ease; /* Chrome - Safari */
+    -o-transition: 0.2s ease; /* Opera */
+    top : 22px;
+    right : 22px;
+    max-width:14px;
+    cursor: pointer;
+}
+.btn-cerrar-modal:hover {
+    transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.4));
+}

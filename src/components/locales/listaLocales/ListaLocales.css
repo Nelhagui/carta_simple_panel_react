@@ -1,31 +1,3 @@
-.item-conten {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    background: #FFFFFF;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    align-items: center;
-    min-height: 73px;
-    padding-top: 10px;
-    margin-bottom: 19px;
-    transition: 0.2s ease;
-    -moz-transition: 0.2s ease; /* Firefox */
-    -webkit-transition: 0.2s ease; /* Chrome - Safari */
-    -o-transition: 0.2s ease; /* Opera */
-}
-.item-conten:hover {
-    border: 1px solid #30627D;
-    box-shadow: 0px 0px 15px rgba(48, 98, 125, 0.53);
-}
-.item-nombre-local {
-    margin-left: 38px;
-}
-.btn-acctiones-items {
-    display: flex;
-    margin-right: 36px;
-}
-
 .cont-nombre-columnas {
     display: flex;
     padding-left: 38px;

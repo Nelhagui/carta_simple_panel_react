@@ -6,8 +6,8 @@ export const HeaderCartas = ({openModal}) => {
             <div className="content-header">
                 <h1>Cartas</h1>
                 <div>
-                    <button className="btn-principales btn-secundario">ELIMINAR</button>
-                    <button className="btn-principales btn-primario" onClick = {() => openModal(true)}>CREAR CARTA</button>
+                    <button className="btn-principales btn-secundario btn-disabled mr-10">ELIMINAR</button>
+                    <button className="btn-principales btn-primario ml-10" onClick = {() => openModal(true)}>CREAR CARTA</button>
                 </div>
             </div>
         </div>

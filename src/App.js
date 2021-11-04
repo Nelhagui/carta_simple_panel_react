@@ -11,7 +11,7 @@ import { Registro } from "./views/registro/Registro";
 
 function App() {
     const [IngresaUsuario] = useState(0);
-    if(IngresaUsuario === 1)
+    if(IngresaUsuario === 0)
     {
         return (
             <Router>

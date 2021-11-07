@@ -3,22 +3,26 @@ import React from 'react'
 export const Filtros = () => {
     return (
         <div>
-            <h1>Filtros</h1>
+            <div className="fila">
+                <h1>Filtros</h1>
+            </div>
             <form action="">
-                <div className="cont-input">
-                    <label className="ml-0" htmlFor="nombre">Modalidad</label>
-                    <div className="cont-btn-opciones">
-                        <button className="btn-primario opciones">Take Away</button>
-                        <button className="btn-secundario opciones">Delivery</button>
-                        <button className="btn-secundario opciones">Consumo en local</button>
+                <div className="fila">
+                    <div className="cont-input">
+                        <label className="ml-0" htmlFor="nombre">Modalidad</label>
+                        <div className="col-12">
+                            <button className="btn-opciones seleccionado">Take Away</button>
+                            <button className="btn-opciones">Delivery</button>
+                            <button className="btn-opciones">Consumo en local</button>
+                        </div>
                     </div>
                 </div>
                 <div className="cont-input">
                     <label className="ml-0" htmlFor="filtros-locales">Locales</label>
                     <input type="text" name="filtros-locales" placeholder="Escribe el nombre del local" autoComplete="off"/>
-                    <div className="cont-btn-selecciones">
-                        <button className="btn-seleccionado"> <img src="/img/icon-sacar.svg" alt="" /> Martínez</button>
-                        <button className="btn-seleccionado"> <img src="/img/icon-sacar.svg" alt="" /> Recoleta</button>
+                    <div className="col-12">
+                        <button className="btn-items-seleccionados"> <img src="/img/icon-sacar.svg" alt="" /> Martínez</button>
+                        <button className="btn-items-seleccionados"> <img src="/img/icon-sacar.svg" alt="" /> Recoleta</button>
                     </div>
                 </div>
                 <div className="cont-input">

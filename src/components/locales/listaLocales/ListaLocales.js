@@ -1,7 +1,8 @@
 import React from 'react';
 import './ListaLocales.css';
+import { ItemLocales } from '../itemLocales/ItemLocales';
 
-export const ListaLocales = () => {
+export const ListaLocales = ({locales}) => {
     return (
         <>
             <div className="cont-nombre-columnas">
@@ -10,20 +11,9 @@ export const ListaLocales = () => {
                 <p>Acciones</p>
             </div>
             <div className="cont-lista-items">
-                <div className="item-lista">
-                    <div className="col-4 jc-c">
-                        <p>Local 1</p>
-                    </div>
-                    <div className="col-4">
-                        <p >Avenida Maipú 2100, Vte Lopez</p>
-                    </div>
-                    <div className="col-4">
-                        <div>
-                            <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                            <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
-                        </div>
-                    </div>
-                </div>
+                {locales.map((item) => {
+                    return <ItemLocales key={item.id} local={item}/>
+                })}
             </div>
         </>
     )

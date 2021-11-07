@@ -1,5 +1,6 @@
 import React from 'react';
-import './Modal.css';
+import './ModalEditarCarta.css';
+import { EditarCarta } from './EditarCarta';
 
 const DIV_MODAL_STYLE = {
     position : 'fixed',
@@ -23,7 +24,7 @@ const DIV_OVERLAY_STYLE = {
     zIndex : 1000
 }
 
-export const Modal = ({children, open, close}) => {
+export const ModalEditarCarta = ({open, close, data}) => {
     if(!open) return null
     return (
         <>
@@ -32,7 +33,7 @@ export const Modal = ({children, open, close}) => {
                 <div className='btn-cerrar-modal'>
                     <img onClick={close} src="/img/cerrar-modal.svg" alt="" />
                 </div>
-                {children}
+                <EditarCarta carta={data}/>
             </div>
         </>
     )

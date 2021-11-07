@@ -1,9 +1,16 @@
 import React from 'react';
+import { useState } from 'react';
+import { ItemCarta } from '../itemCarta/ItemCarta';
 import './ListaCartas.css';
+import { ModalEditarCarta } from '../editarCarta/ModalEditarCarta';
 
-export const ListaCartas = () => {
+export const ListaCartas = ({cartas}) => {
+    const [isOpenEdit, setIsOpenEdit] = useState(false);
+    const [dataCarta, setDataCarta] = useState(false)
+    const funcinoSetCarta = (data) => { setDataCarta(data); setIsOpenEdit(true)}
     return (
         <>
+            <ModalEditarCarta open = {isOpenEdit} close = { () => setIsOpenEdit(false)} data={dataCarta}/>
             <div className="cont-nombre-columnas">
                 <p>Nombre</p>
                 <p>Modalidad</p>
@@ -11,64 +18,9 @@ export const ListaCartas = () => {
                 <p>Acciones</p>
             </div>
             <div className="cont-lista-items">
-                <div className="item-lista">
-                    <div className="col-4">
-                        <p className="item-lista-col-1">Carta 1</p>
-                    </div>
-                    <div className="col-4">
-                        <ul className="lista-modalidad">
-                            <li>Take away</li>
-                            <li>Delivery</li>
-                            <li>En el local</li>
-                        </ul>
-                    </div>
-                    <div className="col-4">
-                        <p className="item-lista-col-3">12 Locales</p>
-                    </div>
-                    <div className="col-4">
-                        <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
-                    </div>
-                </div>
-
-                <div className="item-lista">
-                    <div className="col-4">
-                        <p className="item-lista-col-1">Carta 1</p>
-                    </div>
-                    <div className="col-4">
-                        <ul className="lista-modalidad">
-                            <li>Take away</li>
-                        </ul>
-                    </div>
-                    <div className="col-4">
-                        <p className="item-lista-col-3">4 Locales</p>
-                    </div>
-                    <div className="col-4">
-                        <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
-                    </div>
-                </div>
-
-                <div className="item-lista">
-                    <div className="col-4">
-                        <p className="item-lista-col-1">Carta 1</p>
-                    </div>
-                    <div className="col-4">
-                        <ul className="lista-modalidad">
-                            <li>En el local</li>
-                        </ul>
-                    </div>
-                    <div className="col-4">
-                        <p className="item-lista-col-3">2 Locales</p>
-                    </div>
-                    <div className="col-4">
-                        <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
-                        <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
-                    </div>
-                </div>
+                {cartas.map((item) => {
+                    return <ItemCarta setCarta={funcinoSetCarta} carta={item}/>
+                })}
             </div>
         </>
     )

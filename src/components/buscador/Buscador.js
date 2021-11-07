@@ -16,7 +16,10 @@ export const Buscador = () => {
                     <input type="text" className="cinput icon-buscar"  placeholder="Buscador"/>
                 </div>
                 <div className="col-5">
-                    <div className="cont-ordenar-por">
+                    <div className="col-2">
+                        <span onClick={()=> setIsOpen(true)} className="btn-filtrar hps">Filtrar</span>
+                    </div>
+                    <div className="col-10 cont-ordenar-por">
                         <select name="ordenar-por" id="ordenar-por">
                             <option value="0">Ordenar por más reciente</option>
                             <option value="1">Más reciente</option>

@@ -80,7 +80,7 @@ export const InformacionLocal = ({data}) => {
                         {/* CODIGO POSTAL */}
                         <div className="contenedor-input">
                             <label htmlFor="codigo_postal" className="label">CP *</label>
-                            <input onChange={handleChange} value={values.codigo_postal} className="cinput mt-17" type="text" name="codigo_postal" placeholder="s" onChange={handleChange} value={values.codigo_postal}  />
+                            <input onChange={handleChange} value={values.codigo_postal} className="cinput mt-17" type="text" name="codigo_postal" placeholder="Ingrese el código postal" />
                         </div>
                     </div>
                 </div>

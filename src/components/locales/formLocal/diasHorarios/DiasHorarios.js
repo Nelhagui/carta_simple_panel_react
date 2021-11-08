@@ -18,7 +18,7 @@ export const DiasHorarios = ({data}) => {
                     <div className='col-1'>
                         <button className='btn-dia-horarios'>Lun</button>
                     </div>
-                    <div className='col-6 fd-c'>
+                    <div className='col-9 fd-c'>
                         <div className='fila'>
                             <div className='col-6 ai-c'>
                                 Desde
@@ -56,7 +56,7 @@ export const DiasHorarios = ({data}) => {
                     <div className='col-1'>
                         <button className='btn-dia-horarios'>Mar</button>
                     </div>
-                    <div className='col-6 fd-c'>
+                    <div className='col-9 fd-c'>
                         <div className='fila'>
                             <div className='col-6 ai-c'>
                                 Desde
@@ -94,7 +94,7 @@ export const DiasHorarios = ({data}) => {
                     <div className='col-1'>
                         <button className='btn-dia-horarios'>Mie</button>
                     </div>
-                    <div className='col-6 fd-c'>
+                    <div className='col-9 fd-c'>
                         <div className='fila'>
                             <div className='col-6 ai-c'>
                                 Desde
@@ -132,7 +132,7 @@ export const DiasHorarios = ({data}) => {
                     <div className='col-1'>
                         <button className='btn-dia-horarios'>Jue</button>
                     </div>
-                    <div className='col-6 fd-c'>
+                    <div className='col-9 fd-c'>
                         <div className='fila'>
                             <div className='col-6 ai-c'>
                                 Desde
@@ -170,7 +170,7 @@ export const DiasHorarios = ({data}) => {
                     <div className='col-1'>
                         <button className='btn-dia-horarios'>Vie</button>
                     </div>
-                    <div className='col-6 fd-c'>
+                    <div className='col-9 fd-c'>
                         <div className='fila'>
                             <div className='col-6 ai-c'>
                                 Desde
@@ -208,7 +208,7 @@ export const DiasHorarios = ({data}) => {
                     <div className='col-1'>
                         <button className='btn-dia-horarios'>Sáb</button>
                     </div>
-                    <div className='col-6 fd-c'>
+                    <div className='col-9 fd-c'>
                         <div className='fila'>
                             <div className='col-6 ai-c'>
                                 Desde
@@ -246,7 +246,7 @@ export const DiasHorarios = ({data}) => {
                     <div className='col-1'>
                         <button className='btn-dia-horarios'>Dom</button>
                     </div>
-                    <div className='col-6 fd-c'>
+                    <div className='col-9 fd-c'>
                         <div className='fila'>
                             <div className='col-6 ai-c'>
                                 Desde

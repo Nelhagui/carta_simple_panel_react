@@ -4,6 +4,7 @@ body {
     padding: 0;
     background: rgba(242, 242, 242, 0.47);
     margin: 0; 
+    scroll-behavior: smooth !important;
 }
 /* LIMPIO ESTILO DE LOS INPUTS TYPE NUMBER */
 input[type=number]::-webkit-inner-spin-button, 

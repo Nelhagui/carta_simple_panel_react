@@ -20,7 +20,6 @@ export const EditarCarta = ({carta}) => {
     const [takeAway, setTakeAway] = useState(false)
     const [delivery, setDelivery] = useState(false)
     const [consumoLocal, setConsumoLocal] = useState(false)
-    const [activo, setActivo] = useState(false)
     const [pp, setPp] = useState(true)
 
 
@@ -29,10 +28,6 @@ export const EditarCarta = ({carta}) => {
         e.preventDefault();
         setSave(true);
     };
-
-    const toggleClass = () => {
-        setActivo(!activo);
-    }; 
     
     return save === false ? 
     ( 

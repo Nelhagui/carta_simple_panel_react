@@ -18,8 +18,8 @@ export const ListaCartas = ({cartas}) => {
                 <p>Acciones</p>
             </div>
             <div className="cont-lista-items">
-                {cartas.map((item) => {
-                    return <ItemCarta setCarta={funcinoSetCarta} carta={item}/>
+                { cartas.map((item, index) => {
+                    return <ItemCarta setCarta={funcinoSetCarta} carta={item} key={index}/>
                 })}
             </div>
         </>

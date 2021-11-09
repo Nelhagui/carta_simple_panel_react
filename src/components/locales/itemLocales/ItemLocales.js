@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const ItemLocales = ({local}) => {
-    console.log(local)
     return (
         <div className="item-lista">
             <Link to={`/locales/${local.id}`} className="col-12" data={local}>

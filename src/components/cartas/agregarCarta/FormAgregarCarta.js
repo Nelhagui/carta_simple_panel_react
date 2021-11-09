@@ -12,9 +12,9 @@ export const FormAgregarCarta = ({handleSubmit}) => {
                 <div className="contenedor-input mt-28">
                     <label htmlFor="nombre"> Modalidad</label>
                     <div className="cont-btn-opciones mt-13">
-                        <button className="btn-opciones seleccionado">Take Away</button>
-                        <button className="btn-opciones" >Delivery</button>
-                        <button className="btn-opciones">Consumo en local</button>
+                        <button type='button' className="btn-opciones seleccionado">Take Away</button>
+                        <button type='button' className="btn-opciones" >Delivery</button>
+                        <button type='button' className="btn-opciones">Consumo en local</button>
                     </div>
                 </div>
                 <div className="contenedor-input mt-28">

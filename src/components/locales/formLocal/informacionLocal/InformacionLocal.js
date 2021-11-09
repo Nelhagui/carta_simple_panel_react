@@ -2,27 +2,44 @@ import React, { useEffect, useState } from 'react';
 import './InformacionLocal.css';
 
 export const InformacionLocal = ({data}) => {
-    const [values, setValues] = useState({});
+    
+    const initialStateInformacionLocal = {
+        nombre: '',
+        email: '',
+        url: '',
+        celular: '',
+        logo: '',
+        direccion: '',
+        numeracion: '',
+        codigo_postal: '',
+        localidad: '',
+        descripcion: '',
+    };
+
+    const [values, setValues] = useState(initialStateInformacionLocal);
+
     useEffect(() => {
-        const initialStateInformacionLocal = {
-            nombre: data.nombre,
-            email: data.email,
-            url: data.url,
-            celular: data.celular,
-            logo: data.logo,
-            direccion: data.direccion,
-            numeracion: data.numeracion,
-            codigo_postal: data.codigo_postal,
-            localidad: data.localidad,
-            descripcion: data.descripcion,
-        };
-        setValues(initialStateInformacionLocal);
-    }, [data])
+        if (data.length !== 0) {
+            setValues({
+                nombre: data.nombre,
+                email: data.email,
+                url: data.url,
+                celular: data.celular,
+                logo: data.logo,
+                direccion: data.direccion,
+                numeracion: data.numeracion,
+                codigo_postal: data.codigo_postal,
+                localidad: data.localidad,
+                descripcion: data.descripcion,}
+            );
+        }
+    }, [data]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setValues({ ...values, [name]: value });
     };
+
     return (
         <>
             <div className='cont-informacion-del-local'>

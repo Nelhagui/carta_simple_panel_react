@@ -1,7 +1,7 @@
 import React from 'react';
 import './HeaderLocal.css';
 
-export const HeaderLocal = ({data}) => {
+export const HeaderLocal = ({data, handleSubmit}) => {
     return (
         <div className="header-seccion">
             <div className="content-header">
@@ -19,7 +19,7 @@ export const HeaderLocal = ({data}) => {
                     </div>
                     <div className='col-5'>
                         <button className="btn-secundario btn-disabled mr-10">CANCELAR</button>
-                        <button className="btn-primario btn-disabled ml-10">GUARDAR CAMBIOS</button>
+                        <button className="btn-primario btn-disabled ml-10" onClick={(e)=>{handleSubmit(e)}}>GUARDAR CAMBIOS</button>
                     </div>
                 </div>
             </div>

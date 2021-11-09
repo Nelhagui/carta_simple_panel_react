@@ -1,6 +1,12 @@
 import React from 'react'
 
 export const ItemCarta = ({setCarta, carta}) => {
+
+    const modalidadItems = carta.modalidades.map((modalidad, index) =>
+        <li key={index}>
+            {modalidad.nombre}
+        </li>
+    );
     return (
         <div className="item-lista">
             <div className="col-4">
@@ -8,11 +14,7 @@ export const ItemCarta = ({setCarta, carta}) => {
             </div>
             <div className="col-4">
                 <ul className="lista-modalidad">
-                    {
-                        carta.modalidades.map((modalidad) => {
-                            return <li key={modalidad.index}>{modalidad.nombre}</li>
-                        })   
-                    }
+                    {modalidadItems}
                 </ul>
             </div>
             <div className="col-4">

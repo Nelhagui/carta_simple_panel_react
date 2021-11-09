@@ -6,17 +6,22 @@ import { HeaderLocales } from '../../components/locales/headerLocales/HeaderLoca
 import { Buscador } from '../../components/buscador/Buscador';
 
 export const Locales = () => {
+
+    const [rutaBusquedaCartas] = useState("http://127.0.0.1:8000/api/locales/busqueda/")
+    const initialStateUrl = ('http://127.0.0.1:8000/api/locales');
+    const [url, setUrl] = useState(initialStateUrl);
+    if(!url){setUrl(initialStateUrl)}
     const [locales, setLocales] = useState([]);
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/locales')
+        axios.get(url)
             .then(res => {
                 setLocales(res.data);
             })
-    }, [])
+    }, [url])
     return (
         <>
             <HeaderLocales/>
-            <Buscador/>
+            <Buscador setUrl={setUrl} urlBusqueda={rutaBusquedaCartas}/>
             <ListaLocales locales={locales}/>
         </>
     )

@@ -1,7 +1,6 @@
 import React from 'react'
 
 export const DiasHorarios = ({data}) => {
-    console.log('horarios', data)
     return (
         <>
             <div className='cont-dias-horarios-del-local'>

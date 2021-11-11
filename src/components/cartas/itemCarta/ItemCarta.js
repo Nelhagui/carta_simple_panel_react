@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const ItemCarta = ({setCarta, carta}) => {
 
@@ -8,7 +9,7 @@ export const ItemCarta = ({setCarta, carta}) => {
         </li>
     );
     return (
-        <div className="item-lista">
+        <Link to={`/carta/${carta.id}`} className="item-lista" data={carta}>
             <div className="col-4">
                 <p className="item-lista-col-1">{carta.nombre}</p>
             </div>
@@ -21,10 +22,10 @@ export const ItemCarta = ({setCarta, carta}) => {
                 <p className="item-lista-col-3">4</p>
             </div>
             <div className="col-4">
-                <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" onClick={()=>{setCarta(carta)}}/>
+                <img className="icon-acciones" src="/img/inicio-sesion/editar.svg" alt="editar" onClick={(e)=>{e.preventDefault(); setCarta(carta)}}/>
                 <img className="icon-acciones" src="/img/inicio-sesion/activo.svg" alt="activo" />
                 <img className="icon-acciones" src="/img/inicio-sesion/seleccion.svg" alt="detalle" />
             </div>
-        </div>
+        </Link>
     )
 }

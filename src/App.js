@@ -9,6 +9,7 @@ import { Login } from "./views/login/Login";
 import { Registro } from "./views/registro/Registro";
 import { Local } from "./views/locales/Local";
 import { Pedidos } from "./views/pedidos/Pedidos";
+import { Carta } from "./views/cartas/Carta";
 
 function App() {
     const [IngresaUsuario] = useState(0);
@@ -25,6 +26,7 @@ function App() {
                                 <Route path="/locales" exact component={Locales} />
                                 <Route path="/locales/:id" exact component={Local} />
                                 <Route path="/cartas" exact component={Cartas} />
+                                <Route path="/carta/:id" exact component={Carta} />
                                 <Route path="/categorias" exact />
                                 <Route path="/pedidos" exact component={Pedidos} />
                             </Switch>

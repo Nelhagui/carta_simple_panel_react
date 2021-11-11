@@ -1,0 +1,24 @@
+.cont-columnas-pedidos {
+    height: calc(100% - var(--margin-top-dynamic-content));
+}
+.columna-pedido {
+    padding: 17px;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.item-pedido {
+    cursor: pointer;
+    padding: 14px;
+    height: 107px;
+    background: rgba(196, 196, 196, 0.22);
+    border-radius: 10px;
+}
+.item-pedido:hover {
+    transition: 0.2s ease;
+    border: 1px solid #30627D;
+    /* box-sizing: border-box; */
+    box-shadow: 0px 0px 15px rgba(48, 98, 125, 0.53);
+}

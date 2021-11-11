@@ -3,12 +3,12 @@ import { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { SideBarMenu } from "./components/sidebarMenu/SideBarMenu";
 import { Home } from "./views/home/Home";
-import { Ordenes } from "./views/ordenes/Ordenes";
 import { Cartas } from "./views/cartas/Cartas";
 import { Locales } from "./views/locales/Locales";
 import { Login } from "./views/login/Login";
 import { Registro } from "./views/registro/Registro";
 import { Local } from "./views/locales/Local";
+import { Pedidos } from "./views/pedidos/Pedidos";
 
 function App() {
     const [IngresaUsuario] = useState(0);
@@ -26,7 +26,7 @@ function App() {
                                 <Route path="/locales/:id" exact component={Local} />
                                 <Route path="/cartas" exact component={Cartas} />
                                 <Route path="/categorias" exact />
-                                <Route path="/ordenes" exact component={Ordenes} />
+                                <Route path="/pedidos" exact component={Pedidos} />
                             </Switch>
                         </div>
                     </div>

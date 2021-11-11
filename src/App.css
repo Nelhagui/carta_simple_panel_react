@@ -1,3 +1,7 @@
+:root {
+    --margin-top-dynamic-content: 136px;
+}
+
 body {
     height: 100vh;
     margin: 0;
@@ -25,7 +29,7 @@ ul { padding: 0; }
 }
 .dynamicContent {
     width: 100%;
-    margin-top: 136px;
+    margin-top: var(--margin-top-dynamic-content);
     margin-left: 7px;
     padding-right: 40px;
     overflow-y: scroll;
@@ -39,7 +43,8 @@ h1 {
 }
 .dinone {display: none;}
 /* FLEX */
-    .fila {display: flex; width: 100%;}
+    .fila {display: flex; width: 100%; flex-wrap: wrap;}
+    .fila-nowrap {display: flex; width: 100%;}
     .df {display: flex;}
     .fd-c {flex-direction: column;}
 
@@ -48,6 +53,7 @@ h1 {
     .ml-1 {margin-left: 1rem !important;} .mr-1 {margin-right: 1rem !important;}
     .ml-2 {margin-left: 2px !important;} .mr-2 {margin-right: 2px !important;}
     .ml-10 {margin-left: 10px !important;} .mr-10 {margin-right: 10px !important;}
+    .ml-20 {margin-left: 20px !important;} .mr-20 {margin-right: 20px !important;}
     .ml-24 {margin-left: 24px !important;} .mr-24 {margin-right: 24px !important;}
     .ml-30 {margin-left: 30px !important;} .mr-30 {margin-right: 30px !important;}
     .mb-6 {margin-bottom: 6px !important;}; .mt-6 {margin-top: 6px !important;};
@@ -141,9 +147,20 @@ h1 {
 
     .btn-dia-horarios { background: #FFFFFF; border: 1px solid #C4C4C4; box-sizing: border-box; border-radius: 16px; width: 50px; height: 45px; color: #000000; line-height: 19px; }
     .btn-dia-horarios.seleccionado {background: #EB6F65; color: #FFFFFF; border: none;}
+
+    .btn-detalle-pedido {
+        background: rgba(196, 196, 196, 0.4);
+        border-radius: 10px;
+        border: none;
+        height: 30px;
+        padding: 5px 22px;
+    }
 /* FIN BOTONES */
 
 /* LISTAS */
 .item-lista { min-height: 46px; background: #FFFFFF; box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25); border-radius: 20px; padding: 27px 23px 20px 28px; margin-bottom: 22px; display: flex;}
 .item-lista:hover {border: 1px solid #30627D; box-shadow: 0px 0px 15px rgba(48, 98, 125, 0.53); transition: 0.2s ease; -moz-transition: 0.2s ease; -webkit-transition: 0.2s ease; -o-transition: 0.2s ease; /* Opera */}
-/* FIN LISTAS */
+
+
+/* HEADERS */
+.header-seccion-sin-back { z-index: 0; position: absolute; width: 100%; height: 109px; left: 0px; top: 0px; }

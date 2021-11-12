@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import { EdicionCarta } from '../../components/cartas/edicionCarta/EdicionCarta';
 import axios from 'axios';
+import { HeaderEdicionCarta } from '../../components/cartas/edicionCarta/headerEdiconCarta/HeaderEdicionCarta';
 
 export const Carta = ({match}) => {
     const [dataMatch, setDataMatch] = useState([]);
@@ -11,8 +13,9 @@ export const Carta = ({match}) => {
             })
     }, [match])
     return (
-        <div>
-           {dataMatch.nombre}
-        </div>
+        <>
+          <HeaderEdicionCarta/>  
+           <EdicionCarta data={dataMatch}/>
+        </>
     )
 }

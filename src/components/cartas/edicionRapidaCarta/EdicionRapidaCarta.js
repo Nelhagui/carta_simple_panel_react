@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './EditarCarta.css';
-import { RespuetaSubmitEditar } from './RespuetaSubmitEditar';
+import './EdicionRapidaCarta.css';
+import { RespuetaSubmitEdicionRapidaCarta } from './RespuetaSubmitEdicionRapidaCarta';
 
-export const EditarCarta = ({carta}) => {
+export const EdicionRapidaCarta = ({carta}) => {
     const initialState = {
         nombre: carta.nombre,
     };
@@ -62,5 +62,5 @@ export const EditarCarta = ({carta}) => {
             </div>
         </form>
     </div>
-    ) : ( <RespuetaSubmitEditar/> )
+    ) : ( <RespuetaSubmitEdicionRapidaCarta/> )
 }

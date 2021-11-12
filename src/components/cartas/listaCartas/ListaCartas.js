@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { ItemCarta } from '../itemCarta/ItemCarta';
 import './ListaCartas.css';
-import { ModalEditarCarta } from '../editarCarta/ModalEditarCarta';
+import { ModalEdicionRapidaCarta } from '../edicionRapidaCarta/ModalEdicionRapidaCarta';
 
 export const ListaCartas = ({cartas}) => {
     const [isOpenEdit, setIsOpenEdit] = useState(false);
@@ -10,7 +10,7 @@ export const ListaCartas = ({cartas}) => {
     const funcinoSetCarta = (data) => { setDataCarta(data); setIsOpenEdit(true)}
     return (
         <>
-            <ModalEditarCarta open = {isOpenEdit} close = { () => setIsOpenEdit(false)} data={dataCarta}/>
+            <ModalEdicionRapidaCarta open = {isOpenEdit} close = { () => setIsOpenEdit(false)} data={dataCarta}/>
             <div className="cont-nombre-columnas">
                 <p>Nombre</p>
                 <p>Modalidad</p>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const RespuetaSubmitEditar = () => {
+export const RespuetaSubmitEdicionRapidaCarta = () => {
     return (
         <>
             <div className='col-12 jc-c mb-46'>

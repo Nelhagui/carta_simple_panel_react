@@ -20,11 +20,11 @@ export const EdicionCarta = ({data}) => {
                 </TabPanel>
                 
                 <TabPanel>
-                    <TabProductos/>
+                    <TabProductos data={data}/>
                 </TabPanel>
 
                 <TabPanel>
-                    <TabCombos/>
+                    <TabCombos data={data}/>
                 </TabPanel>
             </Tabs>
         </div>

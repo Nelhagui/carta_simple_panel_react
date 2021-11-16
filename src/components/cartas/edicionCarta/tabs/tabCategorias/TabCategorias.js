@@ -13,29 +13,41 @@ import {
 export const TabCategorias = ({data}) => {
     const itemsCategoria = data.map((item, index) => 
             
-                <AccordionItem key={index}>
+                <AccordionItem key={index} >
                     <AccordionItemHeading className='fila'>
-                        <AccordionItemButton>
+                        <AccordionItemButton className='item-lista-tabs'>
                             <div className='fila'>
-                                <div className="col-3">
+                                <div className="col-4">
                                     <img src="" alt="" />
                                     {item.nombre}
                                 </div>
-                                <div className="col-3">{item.descripcion}</div>
-                                <div className="col-3">acciones</div>
+                                <div className="col-4">{item.descripcion}</div>
+                                <div className="col-4 jc-fe">
+                                    <img src="/img/activo.svg" alt="" />
+                                    <img src="/img/icon-duplicar.svg" alt="" />
+                                    <img src="/img/editar-base.svg" alt="" />
+                                    <img src="/img/seleccion.svg" alt="" />
+                                </div>
                             </div>
                         </AccordionItemButton>
                     </AccordionItemHeading>
                     <AccordionItemPanel>
+                        <div className="fila mt-26 mb-6">
+                            <div className='col-3 jc-fs'>Productos y combos</div>
+                            <div className='col-3 jc-fs'>Código</div>
+                            <div className='col-3 jc-fs'>Precios</div>
+                            <div className='col-3 jc-c'>Acciones</div>
+                        </div>
+                        <hr className='mb-26'/>
                         {item.productos.map((producto, index) =>
-                            <div className="fila item-contenido-categoria" key={index}>
-                                <div className="col-3">
+                            <div className="fila item-contenido-categoria mb-17" key={index}>
+                                <div className="col-3 jc-fs">
                                     <img src="" alt="" />
-                                    {producto.nombre}
+                                    {producto.nombre} {index}
                                 </div>
-                                <div className="col-3">{producto.codigo}</div>
-                                <div className="col-3">{producto.precio_final}</div>
-                                <div className="col-3">
+                                <div className="col-3 jc-fs">{producto.codigo}</div>
+                                <div className="col-3 jc-fs">{producto.precio_final}</div>
+                                <div className="col-3 jc-sa">
                                     <img src="/img/activo.svg" alt="" />
                                     <img src="/img/icon-duplicar.svg" alt="" />
                                     <img src="/img/editar-base.svg" alt="" />
@@ -45,13 +57,13 @@ export const TabCategorias = ({data}) => {
                         )}
                         {item.combos.map((combo) =>
                             <div className="fila item-contenido-categoria" key={combo.id+'combo'}>
-                                <div className="col-3">
+                                <div className="col-3 jc-fs">
                                     <img src="" alt="" />
                                     {combo.nombre}
                                 </div>
-                                <div className="col-3">{combo.codigo} (combo)</div>
-                                <div className="col-3">{combo.precio_final}</div>
-                                <div className="col-3">
+                                <div className="col-3 jc-fs">{combo.codigo} (combo)</div>
+                                <div className="col-3 jc-fs">{combo.precio_final}</div>
+                                <div className="col-3 jc-sa">
                                     <img src="/img/activo.svg" alt="" />
                                     <img src="/img/icon-duplicar.svg" alt="" />
                                     <img src="/img/editar-base.svg" alt="" />
@@ -65,6 +77,11 @@ export const TabCategorias = ({data}) => {
     return (
         <>
             <Buscador/>
+            <div className="fila">
+                <div className='col-4'> Categoría </div>
+                <div className='col-4'> Descripción </div>
+                <div className='col-4 jc-fe'> Acciones </div>
+            </div>
             <Accordion>
                 {itemsCategoria}
             </Accordion>
@@ -72,3 +89,4 @@ export const TabCategorias = ({data}) => {
         </>
     )
 }
+

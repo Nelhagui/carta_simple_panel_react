@@ -1,9 +1,10 @@
 import {React, useEffect, useState} from 'react';
 import { Buscador } from '../../../../buscador/Buscador';
+import { ModalCrearProducto } from './modalCrearProducto/ModalCrearProducto';
 
 export const TabProductos = ({data}) => {
+    const [isOpenAdd, setIsOpenAdd] = useState(false); 
     const [prodTabProductos, setProdTabProductos] = useState([])
-    
     useEffect(() => {
         const productoss = data.filter((item) => {
             return (item.productos.length > 0)
@@ -39,6 +40,11 @@ export const TabProductos = ({data}) => {
         )
     return (
         <>
+            <ModalCrearProducto open={isOpenAdd} close={()=>setIsOpenAdd(false)} />
+            <div className="fila jc-fe">
+                <button className='btn-secundario btn-disabled'>ELIMINAR</button>
+                <button className='btn-primario' onClick={() => setIsOpenAdd(true)} >CREAR PRODUCTO</button>
+            </div> 
             <Buscador/>
             <div className="fila">
                 <div className='col-4'> Categoría </div>

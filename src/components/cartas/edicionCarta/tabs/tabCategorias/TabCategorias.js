@@ -1,18 +1,14 @@
-import React from 'react';
+import React from "react";
+import { useState} from "react";
 import './TabCategorias.css';
 import { Buscador } from '../../../../buscador/Buscador';
-import {
-    Accordion,
-    AccordionItem,
-    AccordionItemHeading,
-    AccordionItemButton,
-    AccordionItemPanel,
-} from 'react-accessible-accordion';
+import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
+import { ModalCrearCategoria } from './modalCrearCategoria/ModalCrearCategoria';
 
 
 export const TabCategorias = ({data}) => {
+    const [isOpenAdd, setIsOpenAdd] = useState(false); 
     const itemsCategoria = data.map((item, index) => 
-            
                 <AccordionItem key={index} >
                     <AccordionItemHeading className='fila'>
                         <AccordionItemButton className='item-lista-tabs'>
@@ -76,6 +72,11 @@ export const TabCategorias = ({data}) => {
     )
     return (
         <>
+            <ModalCrearCategoria open={isOpenAdd} close={()=>setIsOpenAdd(false)} />
+            <div className="fila jc-fe">
+                <button className='btn-secundario btn-disabled'>ELIMINAR</button>
+                <button className='btn-primario' onClick={() => setIsOpenAdd(true)} >CREAR CATEGORIA</button>
+            </div> 
             <Buscador/>
             <div className="fila">
                 <div className='col-4'> Categoría </div>

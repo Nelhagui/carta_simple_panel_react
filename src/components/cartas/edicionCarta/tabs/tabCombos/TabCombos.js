@@ -1,9 +1,10 @@
 import {React, useState, useEffect} from 'react'
 import { Buscador } from '../../../../buscador/Buscador';
+import { ModalCrearCombo } from './modalCrearCombo/ModalCrearCombo';
 
 export const TabCombos = ({data}) => {
+    const [isOpenAdd, setIsOpenAdd] = useState(false); 
     const [prodTabCombos, setProdTabCombos] = useState([])
-    
     useEffect(() => {
         const combos = data.filter((item) => {
             return (item.combos.length > 0)
@@ -39,6 +40,11 @@ export const TabCombos = ({data}) => {
         )
     return (
         <>
+            <ModalCrearCombo open={isOpenAdd} close={()=>setIsOpenAdd(false)} />
+            <div className="fila jc-fe">
+                <button className='btn-secundario btn-disabled'>ELIMINAR</button>
+                <button className='btn-primario' onClick={() => setIsOpenAdd(true)} >CREAR COMBOß</button>
+            </div> 
             <Buscador/>
             <div className="fila">
                 <div className='col-4'> Categoría </div>

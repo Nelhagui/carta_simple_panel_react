@@ -1,9 +1,14 @@
 import {React, useState, useEffect} from 'react'
 import { Buscador } from '../../../../buscador/Buscador';
-import { ModalCrearCombo } from './modalCrearCombo/ModalCrearCombo';
+import { FormCrearCombo } from '../../../../combos/crearCombo/formCrearCombo/FormCrearCombo';
+import { FormEditarCombo } from '../../../../combos/editarCombo/formEditarCombo/FormEditarCombo';
+import { Modal } from '../../../../modal/Modal';
 
 export const TabCombos = ({data}) => {
-    const [isOpenAdd, setIsOpenAdd] = useState(false); 
+    const [open, setOpen] = useState(false);
+    const close = ()=>{setOpen(false)};
+    const [content, setContent] = useState(false);
+
     const [prodTabCombos, setProdTabCombos] = useState([])
     useEffect(() => {
         const combos = data.filter((item) => {
@@ -30,20 +35,20 @@ export const TabCombos = ({data}) => {
                 <div className="col-3 jc-fs">{combo.codigo}</div>
                 <div className="col-3 jc-fs">{combo.precio_final}</div>
                 <div className="col-3 jc-sa">
-                    <img src="/img/activo.svg" alt="" />
-                    <img src="/img/icon-duplicar.svg" alt="" />
-                    <img src="/img/editar-base.svg" alt="" />
-                    <img src="/img/borrar.svg" alt="" />
+                    <img className='icon-acciones' src="/img/activo.svg" alt="" />
+                    <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
+                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={()=>{setContent(<FormEditarCombo close={close}/>); setOpen(true)} } />
+                    <img className='icon-acciones' src="/img/borrar.svg" alt="" />
                 </div>
             </div>
         </div>
         )
     return (
         <>
-            <ModalCrearCombo open={isOpenAdd} close={()=>setIsOpenAdd(false)} />
+            <Modal children={content} open={open} close={close}/>
             <div className="fila jc-fe">
                 <button className='btn-secundario btn-disabled'>ELIMINAR</button>
-                <button className='btn-primario' onClick={() => setIsOpenAdd(true)} >CREAR COMBOß</button>
+                <button className='btn-primario' onClick={ ()=>{setContent(<FormCrearCombo close={close}/>); setOpen(true)} } >CREAR COMBO</button>
             </div> 
             <Buscador/>
             <div className="fila">

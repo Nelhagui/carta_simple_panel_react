@@ -10,8 +10,6 @@ export const ListaProductos = () => {
             .then((response) => response.json())
             .then((res) => setProductos(res));
     }, []);
-    console.log(productos);
-
     return (
         <>
             <ul>

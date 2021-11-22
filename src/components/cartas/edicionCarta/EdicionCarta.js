@@ -6,7 +6,6 @@ import {TabProductos} from './tabs/tabProductos/TabProductos';
 import {TabCategorias} from './tabs/tabCategorias/TabCategorias';
 
 export const EdicionCarta = ({data}) => {
-    console.log(data)
     return (
         <div>
             <Tabs>

@@ -1,13 +1,42 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-export const FormCrearComboPaso1 = ({close, siguiente}) => {
+export const FormEditarProducto = ({id, close}) => {
+    
     const [celiaco, setCeliaco] = useState(false)
     const [vegano, setVegano] = useState(false)
     const [vegetariano, setVegetariano] = useState(false)
+
+    const initialState = {
+        nombre: "",
+        codigo: "",
+        precio: "",
+        estado: "",
+        descripcion: "",
+        imagen: "",
+    };
+    const [values, setValues] = useState(initialState);
+
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/producto/'+id)
+            .then(res => {
+                setValues(res.data);
+            })
+    }, [id])
+
+    const validaCampos = (e) => {
+        const { value, name } = e.target;
+        setValues({ ...values, [name]: value });
+    };
+
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+        setValues(initialState);
+    };
+
     return (
-        <div> 
-            <h1>Creá tu combo</h1>
+        <div>
+            <h1>Editá tu producto</h1>
             <form>
                 <div className='fila'>
                     <div className='col-6 fd-c'>
@@ -63,11 +92,11 @@ export const FormCrearComboPaso1 = ({close, siguiente}) => {
                     <div className="contenedor-input mt-26">
                         <div className="btn-acciones-modal">
                             <button className="btn-secundario" type='button' onClick={close}>CANCELAR</button>
-                            <button className="btn-primario" type="button" onClick={siguiente}>SIGUIENTE</button>
+                            <button className="btn-primario btn-disabled" type="submit">CREAR PRODUCTO</button>
                         </div>
                     </div>
                 </div>
             </form>
         </div>
-    )
-}
+    );
+};

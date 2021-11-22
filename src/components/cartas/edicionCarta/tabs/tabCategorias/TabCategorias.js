@@ -3,11 +3,14 @@ import { useState} from "react";
 import './TabCategorias.css';
 import { Buscador } from '../../../../buscador/Buscador';
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
-import { ModalCrearCategoria } from './modalCrearCategoria/ModalCrearCategoria';
+import { Modal } from "../../../../modal/Modal";
+import { FormCrearCategoria } from "../../../../categorias/crearCategoria/FormCrearCategoria";
 
 
 export const TabCategorias = ({data}) => {
-    const [isOpenAdd, setIsOpenAdd] = useState(false); 
+    const [open, setOpen] = useState(false); 
+    const close = ()=>{setOpen(false)};
+    const [content, setContent] = useState(false)
     const itemsCategoria = data.map((item, index) => 
                 <AccordionItem key={index} >
                     <AccordionItemHeading className='fila'>
@@ -19,10 +22,10 @@ export const TabCategorias = ({data}) => {
                                 </div>
                                 <div className="col-4">{item.descripcion}</div>
                                 <div className="col-4 jc-fe">
-                                    <img src="/img/activo.svg" alt="" />
-                                    <img src="/img/icon-duplicar.svg" alt="" />
-                                    <img src="/img/editar-base.svg" alt="" />
-                                    <img src="/img/seleccion.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/activo.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/seleccion.svg" alt="" />
                                 </div>
                             </div>
                         </AccordionItemButton>
@@ -44,10 +47,10 @@ export const TabCategorias = ({data}) => {
                                 <div className="col-3 jc-fs">{producto.codigo}</div>
                                 <div className="col-3 jc-fs">{producto.precio_final}</div>
                                 <div className="col-3 jc-sa">
-                                    <img src="/img/activo.svg" alt="" />
-                                    <img src="/img/icon-duplicar.svg" alt="" />
-                                    <img src="/img/editar-base.svg" alt="" />
-                                    <img src="/img/borrar.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/activo.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
+                                    {/* <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={()=>{setContent=(<FormEditarProducto id={producto.id}/>); setOpen(true)}} /> */}
+                                    <img className='icon-acciones' src="/img/borrar.svg" alt="" />
                                 </div>
                             </div>
                         )}
@@ -60,10 +63,10 @@ export const TabCategorias = ({data}) => {
                                 <div className="col-3 jc-fs">{combo.codigo} (combo)</div>
                                 <div className="col-3 jc-fs">{combo.precio_final}</div>
                                 <div className="col-3 jc-sa">
-                                    <img src="/img/activo.svg" alt="" />
-                                    <img src="/img/icon-duplicar.svg" alt="" />
-                                    <img src="/img/editar-base.svg" alt="" />
-                                    <img src="/img/borrar.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/activo.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/borrar.svg" alt="" />
                                 </div>
                             </div>
                         )}
@@ -72,10 +75,10 @@ export const TabCategorias = ({data}) => {
     )
     return (
         <>
-            <ModalCrearCategoria open={isOpenAdd} close={()=>setIsOpenAdd(false)} />
+            <Modal content={content} open={open} close={close}/>
             <div className="fila jc-fe">
                 <button className='btn-secundario btn-disabled'>ELIMINAR</button>
-                <button className='btn-primario' onClick={() => setIsOpenAdd(true)} >CREAR CATEGORIA</button>
+                <button className='btn-primario' onClick={() => {setContent(<FormCrearCategoria close={close}/>); setOpen(true)}} >CREAR CATEGORIA</button>
             </div> 
             <Buscador/>
             <div className="fila">

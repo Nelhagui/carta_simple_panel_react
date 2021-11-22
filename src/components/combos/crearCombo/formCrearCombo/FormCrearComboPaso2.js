@@ -1,11 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-import { ModalCrearProducto } from '../../tabProductos/modalCrearProducto/ModalCrearProducto';
+import { Modal } from '../../../modal/Modal';
+import { FormCrearProducto } from '../../../producto/crearProducto/formCrearProducto/FormCrearProducto';
 export const FormCrearComboPaso2 = ({volver}) => {
-    const [isOpenAddP, setIsOpenAddP] = useState(false); 
+    const [open2, setOpen2] = useState(false); 
     return (
         <div>
-            <ModalCrearProducto open={isOpenAddP} close={()=>setIsOpenAddP(false)}/>
+            {/* <ModalCrearProducto open2={isOpen2AddP} close={()=>setIsOpen2AddP(false)}/> */}
+            <Modal content={<FormCrearProducto/>} open={open2} close={setOpen2(false)}/>
             <h1>Agregá productos a tu combo</h1>
             <div className="contenedor-input mt-28">
                 <label htmlFor="categorias">Productos</label>
@@ -16,15 +18,13 @@ export const FormCrearComboPaso2 = ({volver}) => {
                 </div>
             </div>
             <div className='fila mt-28'>
-                <span onClick={()=>setIsOpenAddP(true)}>+ Crear producto</span>
+                <span onClick={()=>{  setOpen2(true) }}>+ Crear producto</span>
             </div>
 
             <div className='fila'>
-                <div className="contenedor-input mt-26">
-                    <div className="btn-acciones-modal">
-                        <button className="btn-secundario" type='button' onClick={volver}>VOLVER</button>
-                        <button className="btn-primario btn-disabled" type="submit">CREAR COMBO</button>
-                    </div>
+                <div className="btn-acciones-modal">
+                    <button className="btn-secundario" type='button' onClick={volver}>VOLVER</button>
+                    <button className="btn-primario btn-disabled" type="submit">CREAR COMBO</button>
                 </div>
             </div>
         </div>

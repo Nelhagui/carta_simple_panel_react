@@ -31,8 +31,6 @@ export const CargaProducto = () => {
             .then((res) => setEstadoCarga(res));
         setValues(initialState);
     };
-    console.log(estadoCarga);
-
     return (
         <div>
             <form

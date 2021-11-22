@@ -16,24 +16,24 @@ function App() {
     if(IngresaUsuario === 0)
     {
         return (
-            <Router>
-                <>
-                    <div className="containerBoby">
-                        <SideBarMenu />
-                        <div className="dynamicContent">
-                            <Switch>
-                                <Route path="/" exact component={Home} />
-                                <Route path="/locales" exact component={Locales} />
-                                <Route path="/locales/:id" exact component={Local} />
-                                <Route path="/cartas" exact component={Cartas} />
-                                <Route path="/carta/:id" exact component={Carta} />
-                                <Route path="/categorias" exact />
-                                <Route path="/pedidos" exact component={Pedidos} />
-                            </Switch>
+                <Router>
+                    <>
+                        <div className="containerBoby">
+                            <SideBarMenu />
+                            <div className="dynamicContent">
+                                <Switch>
+                                    <Route path="/" exact component={Home} />
+                                    <Route path="/locales" exact component={Locales} />
+                                    <Route path="/locales/:id" exact component={Local} />
+                                    <Route path="/cartas" exact component={Cartas} />
+                                    <Route path="/carta/:id" exact component={Carta} />
+                                    <Route path="/categorias" exact />
+                                    <Route path="/pedidos" exact component={Pedidos} />
+                                </Switch>
+                            </div>
                         </div>
-                    </div>
-                </>
-            </Router>
+                    </>
+                </Router>
         );
     } else {
         return (

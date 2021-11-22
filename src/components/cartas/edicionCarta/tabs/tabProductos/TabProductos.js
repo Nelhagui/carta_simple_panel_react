@@ -1,9 +1,14 @@
 import {React, useEffect, useState} from 'react';
 import { Buscador } from '../../../../buscador/Buscador';
-import { ModalCrearProducto } from './modalCrearProducto/ModalCrearProducto';
+import { Modal } from '../../../../modal/Modal';
+import { FormCrearProducto } from '../../../../producto/crearProducto/formCrearProducto/FormCrearProducto';
+import { FormEditarProducto } from '../../../../producto/editarProducto/formEditarProducto/FormEditarProducto';
 
 export const TabProductos = ({data}) => {
-    const [isOpenAdd, setIsOpenAdd] = useState(false); 
+    const [open, setOpen] = useState(false);
+    const close = ()=>{setOpen(false)};
+    const [content, setContent] = useState(false);
+
     const [prodTabProductos, setProdTabProductos] = useState([])
     useEffect(() => {
         const productoss = data.filter((item) => {
@@ -30,20 +35,20 @@ export const TabProductos = ({data}) => {
                 <div className="col-3 jc-fs">{producto.codigo}</div>
                 <div className="col-3 jc-fs">{producto.precio_final}</div>
                 <div className="col-3 jc-sa">
-                    <img src="/img/activo.svg" alt="" />
-                    <img src="/img/icon-duplicar.svg" alt="" />
-                    <img src="/img/editar-base.svg" alt="" />
-                    <img src="/img/borrar.svg" alt="" />
+                    <img className='icon-acciones' src="/img/activo.svg" alt="" />
+                    <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
+                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={()=>{setContent(<FormEditarProducto id={producto.id} close={close}/>); setOpen(true)}}/>
+                    <img className='icon-acciones' src="/img/borrar.svg" alt="" />
                 </div>
             </div>
         </div>
         )
     return (
         <>
-            <ModalCrearProducto open={isOpenAdd} close={()=>setIsOpenAdd(false)} />
+            <Modal children={content} open={open} close={close}/>
             <div className="fila jc-fe">
                 <button className='btn-secundario btn-disabled'>ELIMINAR</button>
-                <button className='btn-primario' onClick={() => setIsOpenAdd(true)} >CREAR PRODUCTO</button>
+                <button className='btn-primario' onClick={ ()=>{setContent(<FormCrearProducto close={close}/>); setOpen(true)} } >CREAR PRODUCTO</button>
             </div> 
             <Buscador/>
             <div className="fila">
@@ -51,7 +56,7 @@ export const TabProductos = ({data}) => {
                 <div className='col-4'> Descripción </div>
                 <div className='col-4 jc-fe'> Acciones </div>
             </div>
-                {itemsProductos}
+            {itemsProductos}
         </>
     )
 }

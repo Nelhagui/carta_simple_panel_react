@@ -149,13 +149,13 @@ h1 {
     .btn-dia-horarios { background: #FFFFFF; border: 1px solid #C4C4C4; box-sizing: border-box; border-radius: 16px; width: 50px; height: 45px; color: #000000; line-height: 19px; }
     .btn-dia-horarios.seleccionado {background: #EB6F65; color: #FFFFFF; border: none;}
 
-    .btn-detalle-pedido {
-        background: rgba(196, 196, 196, 0.4);
-        border-radius: 10px;
-        border: none;
-        height: 30px;
-        padding: 5px 22px;
-    }
+    .btn-detalle-pedido { background: rgba(196, 196, 196, 0.4); border-radius: 10px; border: none; height: 30px; padding: 5px 22px; }
+
+    .text-selected { color: #30627D;}
+    .text-disabled { color: #C4C4C4;}
+    .btn-estado-habilitado {cursor: pointer;}
+    .btn-estado-habilitado span{display: flex;
+        align-items: center;}
 /* FIN BOTONES */
 
 /* LISTAS */

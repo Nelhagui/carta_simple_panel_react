@@ -24,15 +24,15 @@ export const FormEditarProducto = ({id, close}) => {
             })
     }, [id])
 
-    const validaCampos = (e) => {
-        const { value, name } = e.target;
-        setValues({ ...values, [name]: value });
-    };
+    // const validaCampos = (e) => {
+    //     const { value, name } = e.target;
+    //     setValues({ ...values, [name]: value });
+    // };
 
-    const handleOnSubmit = (e) => {
-        e.preventDefault();
-        setValues(initialState);
-    };
+    // const handleOnSubmit = (e) => {
+    //     e.preventDefault();
+    //     setValues(initialState);
+    // };
 
     return (
         <div>
@@ -42,7 +42,7 @@ export const FormEditarProducto = ({id, close}) => {
                     <div className='col-6 fd-c'>
                         <div className="contenedor-input">
                             <label htmlFor="nombre" className="label">Nombre</label>
-                            <input className="cinput mt-17" type="text" name="nombre" placeholder="Escribe el nombre de tu carta" autoComplete="off"/>
+                            <input className="cinput mt-17" type="text" name="nombre" placeholder="Escribe el nombre de tu carta" autoComplete="off" value={values.nombre}/>
                         </div>
                         <div className="fila">
                             <div className='col-6'>

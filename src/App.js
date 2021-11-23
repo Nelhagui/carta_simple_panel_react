@@ -8,6 +8,7 @@ import { Locales } from "./views/locales/Locales";
 import { Login } from "./views/login/Login";
 import { Registro } from "./views/registro/Registro";
 import { Local } from "./views/locales/Local";
+import { CrearLocal } from "./views/locales/CrearLocal";
 import { Pedidos } from "./views/pedidos/Pedidos";
 import { Carta } from "./views/cartas/Carta";
 
@@ -24,6 +25,7 @@ function App() {
                                 <Switch>
                                     <Route path="/" exact component={Home} />
                                     <Route path="/locales" exact component={Locales} />
+                                    <Route path="/locales/agregar" exact component={CrearLocal} />
                                     <Route path="/locales/:id" exact component={Local} />
                                     <Route path="/cartas" exact component={Cartas} />
                                     <Route path="/carta/:id" exact component={Carta} />

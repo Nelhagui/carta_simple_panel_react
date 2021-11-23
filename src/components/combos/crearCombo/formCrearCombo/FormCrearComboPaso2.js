@@ -1,13 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
-import { Modal } from '../../../modal/Modal';
+import { Modal2doNivel } from '../../../modal/Modal2doNivel';
 import { FormCrearProducto } from '../../../producto/crearProducto/formCrearProducto/FormCrearProducto';
 export const FormCrearComboPaso2 = ({volver}) => {
-    const [open2, setOpen2] = useState(false); 
+    const [open, setOpen] = useState(false); 
+    const [content2Nivel, setContent2Nivel] = useState('')
     return (
         <div>
-            {/* <ModalCrearProducto open2={isOpen2AddP} close={()=>setIsOpen2AddP(false)}/> */}
-            <Modal content={<FormCrearProducto/>} open={open2} close={setOpen2(false)}/>
+            <Modal2doNivel children={content2Nivel} openn={open} closee={()=>{setOpen(false)}}/>
             <h1>Agregá productos a tu combo</h1>
             <div className="contenedor-input mt-28">
                 <label htmlFor="categorias">Productos</label>
@@ -18,12 +18,12 @@ export const FormCrearComboPaso2 = ({volver}) => {
                 </div>
             </div>
             <div className='fila mt-28'>
-                <span onClick={()=>{  setOpen2(true) }}>+ Crear producto</span>
+                <span onClick={()=>{ setContent2Nivel(<FormCrearProducto close={()=>setOpen(false)} />); setOpen(true)}}>+ Crear producto</span>
             </div>
 
             <div className='fila'>
                 <div className="btn-acciones-modal">
-                    <button className="btn-secundario" type='button' onClick={volver}>VOLVER</button>
+                    <button className="btn-secundario" type='button' onClick={volver} >VOLVER</button>
                     <button className="btn-primario btn-disabled" type="submit">CREAR COMBO</button>
                 </div>
             </div>

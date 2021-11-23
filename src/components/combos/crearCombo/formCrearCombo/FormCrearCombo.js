@@ -4,5 +4,5 @@ import { FormCrearComboPaso2 } from './FormCrearComboPaso2';
 
 export const FormCrearCombo = ({close}) => {
     const [siguiente, setSiguiente] = useState(false)
-    return siguiente === false ? <FormCrearComboPaso1 close={close} siguiente={()=>setSiguiente(true)}/> : <FormCrearComboPaso2 close={close} volver={()=>setSiguiente(false)}/>
+    return siguiente === false ? <FormCrearComboPaso1 siguiente={()=>setSiguiente(true)} close={close} /> : <FormCrearComboPaso2 volver={()=>setSiguiente(false)} close={close} />
 }

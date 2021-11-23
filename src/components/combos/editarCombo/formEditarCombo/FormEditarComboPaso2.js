@@ -1,13 +1,14 @@
 import React from 'react';
 import { useState } from 'react';
-import { Modal } from '../../../modal/Modal';
 import { FormCrearProducto } from '../../../producto/crearProducto/formCrearProducto/FormCrearProducto';
+import { Modal2doNivel } from '../../../modal/Modal2doNivel';
 
-export const FormEditarComboPaso2 = ({volver}) => {
-    const [isOpenAddP, setIsOpenAddP] = useState(false); 
+export const FormEditarComboPaso2 = ({close, volver}) => {
+    const [open, setOpen] = useState(false); 
+    const [content2Nivel, setContent2Nivel] = useState('')
     return (
         <div>
-            <Modal children={<FormCrearProducto/>} open={isOpenAddP}/>
+            <Modal2doNivel children={content2Nivel} openn={open} closee={()=>{setOpen(false)}}/>
             <h1>Agregá productos a tu combo</h1>
             <div className="contenedor-input mt-28">
                 <label htmlFor="categorias">Productos</label>
@@ -18,7 +19,7 @@ export const FormEditarComboPaso2 = ({volver}) => {
                 </div>
             </div>
             <div className='fila mt-28'>
-                <span onClick={()=>setIsOpenAddP(true)}>+ Crear producto</span>
+                <span onClick={()=>{ setContent2Nivel(<FormCrearProducto close={()=>setOpen(false)} />); setOpen(true)}}>+ Crear producto</span>
             </div>
 
             <div className='fila'>

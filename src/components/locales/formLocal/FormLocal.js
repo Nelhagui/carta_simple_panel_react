@@ -6,14 +6,22 @@ import { CartasDelLocal } from './cartasDelLocal/CartasDelLocal';
 import { LinksFormLocal } from '../linksFormLocal/LinksFormLocal';
 
 export const FormLocal = ({data}) => {
-    return (
-        <>
 
-                <LinksFormLocal/>
-                <InformacionLocal data={data}/>
-                <DiasHorarios data={data}/>
-                <RedesSociales data={data}/>
-                <CartasDelLocal/>
+    return !data === false ? (
+        <>
+            <LinksFormLocal/>
+            <InformacionLocal data={data}/>
+            <DiasHorarios data={data}/>
+            <RedesSociales data={data}/>
+            <CartasDelLocal/>
+        </>
+    ) : (
+        <>
+            <LinksFormLocal/>
+            <InformacionLocal />
+            <DiasHorarios />
+            <RedesSociales />
+            <CartasDelLocal/>
         </>
     )
 }

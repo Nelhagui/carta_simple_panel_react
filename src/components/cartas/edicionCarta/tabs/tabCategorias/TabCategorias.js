@@ -5,6 +5,9 @@ import { Buscador } from '../../../../buscador/Buscador';
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 import { Modal } from "../../../../modal/Modal";
 import { FormCrearCategoria } from "../../../../categorias/crearCategoria/FormCrearCategoria";
+import { FormEditarCategoria } from "../../../../categorias/editarCategoria/FormEditarCategoria";
+import { FormEditarProducto } from "../../../../producto/editarProducto/formEditarProducto/FormEditarProducto";
+import { FormEditarCombo } from "../../../../combos/editarCombo/formEditarCombo/FormEditarCombo";
 
 
 export const TabCategorias = ({data}) => {
@@ -24,7 +27,7 @@ export const TabCategorias = ({data}) => {
                                 <div className="col-4 jc-fe">
                                     <img className='icon-acciones' src="/img/activo.svg" alt="" />
                                     <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
-                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={(e)=>{e.preventDefault(); setContent(<FormEditarCategoria id={item.id} close={close}/>); setOpen(true)}} />
                                     <img className='icon-acciones' src="/img/seleccion.svg" alt="" />
                                 </div>
                             </div>
@@ -49,7 +52,7 @@ export const TabCategorias = ({data}) => {
                                 <div className="col-3 jc-sa">
                                     <img className='icon-acciones' src="/img/activo.svg" alt="" />
                                     <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
-                                    {/* <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={()=>{setContent=(<FormEditarProducto id={producto.id}/>); setOpen(true)}} /> */}
+                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={(e)=>{ setContent(<FormEditarProducto id={producto.id} close={close}/>); setOpen(true)}} />
                                     <img className='icon-acciones' src="/img/borrar.svg" alt="" />
                                 </div>
                             </div>
@@ -65,7 +68,7 @@ export const TabCategorias = ({data}) => {
                                 <div className="col-3 jc-sa">
                                     <img className='icon-acciones' src="/img/activo.svg" alt="" />
                                     <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
-                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" />
+                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={()=>{setContent(<FormEditarCombo id={combo.id} close={close}/>); setOpen(true)}}  />
                                     <img className='icon-acciones' src="/img/borrar.svg" alt="" />
                                 </div>
                             </div>
@@ -75,7 +78,7 @@ export const TabCategorias = ({data}) => {
     )
     return (
         <>
-            <Modal content={content} open={open} close={close}/>
+            <Modal children={content} open={open} close={close}/>
             <div className="fila jc-fe">
                 <button className='btn-secundario btn-disabled'>ELIMINAR</button>
                 <button className='btn-primario' onClick={() => {setContent(<FormCrearCategoria close={close}/>); setOpen(true)}} >CREAR CATEGORIA</button>

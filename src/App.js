@@ -11,12 +11,14 @@ import { Local } from "./views/locales/Local";
 import { CrearLocal } from "./views/locales/CrearLocal";
 import { Pedidos } from "./views/pedidos/Pedidos";
 import { Carta } from "./views/cartas/Carta";
+import { DataCartaProvider } from "./components/context/DataCartaContext";
 
 function App() {
     const [IngresaUsuario] = useState(0);
     if(IngresaUsuario === 0)
     {
         return (
+            <DataCartaProvider>
                 <Router>
                     <>
                         <div className="containerBoby">
@@ -36,6 +38,7 @@ function App() {
                         </div>
                     </>
                 </Router>
+            </DataCartaProvider>
         );
     } else {
         return (

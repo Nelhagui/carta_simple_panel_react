@@ -3,8 +3,13 @@ import { Buscador } from '../../../../buscador/Buscador';
 import { FormCrearCombo } from '../../../../combos/crearCombo/formCrearCombo/FormCrearCombo';
 import { FormEditarCombo } from '../../../../combos/editarCombo/formEditarCombo/FormEditarCombo';
 import { Modal } from '../../../../modal/Modal';
+import { useContext } from "react";
+import { DataCartaContext } from "../../../../context/DataCartaContext";
 
-export const TabCombos = ({data}) => {
+export const TabCombos = () => {
+
+    const {data} = useContext(DataCartaContext);
+
     const [open, setOpen] = useState(false);
     const close = ()=>{setOpen(false)};
     const [content, setContent] = useState(false);

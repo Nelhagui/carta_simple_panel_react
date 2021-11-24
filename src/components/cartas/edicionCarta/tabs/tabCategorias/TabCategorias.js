@@ -8,9 +8,12 @@ import { FormCrearCategoria } from "../../../../categorias/crearCategoria/FormCr
 import { FormEditarCategoria } from "../../../../categorias/editarCategoria/FormEditarCategoria";
 import { FormEditarProducto } from "../../../../producto/editarProducto/formEditarProducto/FormEditarProducto";
 import { FormEditarCombo } from "../../../../combos/editarCombo/formEditarCombo/FormEditarCombo";
+import { useContext } from "react";
+import { DataCartaContext } from "../../../../context/DataCartaContext";
 
 
-export const TabCategorias = ({data}) => {
+export const TabCategorias = () => {
+    const {data} = useContext(DataCartaContext);
     const [open, setOpen] = useState(false); 
     const close = ()=>{setOpen(false)};
     const [content, setContent] = useState(false)

@@ -3,8 +3,11 @@ import { Buscador } from '../../../../buscador/Buscador';
 import { Modal } from '../../../../modal/Modal';
 import { FormCrearProducto } from '../../../../producto/crearProducto/formCrearProducto/FormCrearProducto';
 import { FormEditarProducto } from '../../../../producto/editarProducto/formEditarProducto/FormEditarProducto';
+import { useContext } from 'react';
+import { DataCartaContext } from '../../../../context/DataCartaContext';
 
-export const TabProductos = ({data}) => {
+export const TabProductos = () => {
+    const {data} = useContext(DataCartaContext);
     const [open, setOpen] = useState(false);
     const close = ()=>{setOpen(false)};
     const [content, setContent] = useState(false);

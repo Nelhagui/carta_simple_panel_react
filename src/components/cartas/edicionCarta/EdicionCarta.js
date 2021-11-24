@@ -5,7 +5,7 @@ import { TabCombos } from './tabs/tabCombos/TabCombos';
 import {TabProductos} from './tabs/tabProductos/TabProductos';
 import {TabCategorias} from './tabs/tabCategorias/TabCategorias';
 
-export const EdicionCarta = ({data}) => {
+export const EdicionCarta = () => {
     return (
         <div>
             <Tabs>
@@ -15,15 +15,15 @@ export const EdicionCarta = ({data}) => {
                     <Tab>Combos</Tab>
                 </TabList>
                 <TabPanel>
-                    <TabCategorias data={data}/>
+                    <TabCategorias/>
                 </TabPanel>
                 
                 <TabPanel>
-                    <TabProductos data={data}/>
+                    <TabProductos/>
                 </TabPanel>
 
                 <TabPanel>
-                    <TabCombos data={data}/>
+                    <TabCombos/>
                 </TabPanel>
             </Tabs>
         </div>

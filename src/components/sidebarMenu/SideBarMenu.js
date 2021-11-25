@@ -10,22 +10,22 @@ export const SideBarMenu = () => {
                 <ul className="nav_items">
                     <NavLink to="/" exact activeClassName="item-active">
                         <li>
-                            <div className='cont-icon-menu'><img src="/img/navbar/inicio.svg" alt=""/></div> INICIO
+                            <div className='cont-icon-menu'><img src="/img/navbar/inicio.svg" alt=""/></div> <span>INICIO</span>
                         </li>
                     </NavLink>
                     <NavLink to="/locales" activeClassName="item-active">
                         <li>
-                            <div className='cont-icon-menu'><img src="/img/navbar/locales.svg" alt=""/></div> LOCALES
+                            <div className='cont-icon-menu'><img src="/img/navbar/locales.svg" alt=""/></div> <span>LOCALES</span>
                         </li>
                     </NavLink>
                     <NavLink to="/cartas" activeClassName="item-active">
                         <li>
-                            <div className='cont-icon-menu'><img src="/img/navbar/cartas.svg" alt=""/></div> CARTAS
+                            <div className='cont-icon-menu'><img src="/img/navbar/cartas.svg" alt=""/></div> <span>CARTAS</span>
                         </li>
                     </NavLink>
                     <NavLink to="/pedidos" activeClassName="item-active">
                         <li>
-                            <div className='cont-icon-menu'><img src="/img/navbar/pedidos.svg" alt=""/></div> PEDIDOS
+                            <div className='cont-icon-menu'><img src="/img/navbar/pedidos.svg" alt=""/></div> <span>PEDIDOS</span>
                         </li>
                     </NavLink>
                 </ul>

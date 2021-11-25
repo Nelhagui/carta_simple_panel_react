@@ -26,23 +26,25 @@ export const TabCombos = ({data}) => {
         setProdTabCombos(arrCombos);
     }, [data])
 
-    const itemsCombos = prodTabCombos.map( (combo, index) =>         
-        <div className='item-lista-tabs' key={index}>
-            <div className="fila mb-17">
-                <div className="col-3 jc-fs">
-                    <img src="" alt="" />
-                    {combo.nombre} {index}
-                </div>
-                <div className="col-3 jc-fs">{combo.codigo}</div>
-                <div className="col-3 jc-fs">{combo.precio_final}</div>
-                <div className="col-3 jc-sa">
-                    <img className='icon-acciones' src="/img/activo.svg" alt="" />
-                    <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
-                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={()=>{setContent(<FormEditarCombo close={close}/>); setOpen(true)} } />
-                    <img className='icon-acciones' src="/img/borrar.svg" alt="" />
+    const itemsCombos = prodTabCombos.map( (combo, index) =>   
+        <div className='fila' key={index}>
+            <div className='item-lista-tabs'>
+                <div className="fila mb-17">
+                    <div className="col-3 jc-fs">
+                        <img src="" alt="" />
+                        {combo.nombre} {index}
+                    </div>
+                    <div className="col-3 jc-fs">{combo.codigo}</div>
+                    <div className="col-3 jc-fs">${combo.precio_final}</div>
+                    <div className="col-3 jc-sa">
+                        <img className='icon-acciones' src="/img/activo.svg" alt="" />
+                        <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
+                        <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={()=>{setContent(<FormEditarCombo close={close}/>); setOpen(true)} } />
+                        <img className='icon-acciones' src="/img/borrar.svg" alt="" />
+                    </div>
                 </div>
             </div>
-        </div>
+        </div>       
         )
     return (
         <>
@@ -53,11 +55,12 @@ export const TabCombos = ({data}) => {
             </div> 
             <Buscador/>
             <div className="fila">
-                <div className='col-4'> Categoría </div>
-                <div className='col-4'> Descripción </div>
-                <div className='col-4 jc-fe'> Acciones </div>
+                <div className='col-3'> Nombre </div>
+                <div className='col-3'> Código </div>
+                <div className='col-3'> Precio </div>
+                <div className='col-3 jc-c'> Acciones </div>
             </div>
-                {itemsCombos}
+            {itemsCombos}
         </>
     )
 }

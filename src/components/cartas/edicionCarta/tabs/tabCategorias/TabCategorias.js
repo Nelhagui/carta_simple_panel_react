@@ -65,7 +65,7 @@ export const TabCategorias = ({data, setData}) => {
                                     {combo.nombre}
                                 </div>
                                 <div className="col-3 jc-fs">{combo.codigo} (combo)</div>
-                                <div className="col-3 jc-fs">{combo.precio_final}</div>
+                                <div className="col-3 jc-fs">${combo.precio_final}</div>
                                 <div className="col-3 jc-sa">
                                     <img className='icon-acciones' src="/img/activo.svg" alt="" />
                                     <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />

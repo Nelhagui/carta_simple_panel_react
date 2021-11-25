@@ -8,15 +8,13 @@ import { FormCrearCategoria } from "../../../../categorias/crearCategoria/FormCr
 import { FormEditarCategoria } from "../../../../categorias/editarCategoria/FormEditarCategoria";
 import { FormEditarProducto } from "../../../../producto/editarProducto/formEditarProducto/FormEditarProducto";
 import { FormEditarCombo } from "../../../../combos/editarCombo/formEditarCombo/FormEditarCombo";
-import { useContext } from "react";
-import { DataCartaContext } from "../../../../context/DataCartaContext";
 
+export const TabCategorias = ({data, setData}) => {
 
-export const TabCategorias = () => {
-    const {data} = useContext(DataCartaContext);
     const [open, setOpen] = useState(false); 
     const close = ()=>{setOpen(false)};
     const [content, setContent] = useState(false)
+
     const itemsCategoria = data.map((item, index) => 
                 <AccordionItem key={index} >
                     <AccordionItemHeading className='fila'>
@@ -30,7 +28,7 @@ export const TabCategorias = () => {
                                 <div className="col-4 jc-fe">
                                     <img className='icon-acciones' src="/img/activo.svg" alt="" />
                                     <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
-                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={(e)=>{e.preventDefault(); setContent(<FormEditarCategoria id={item.id} close={close}/>); setOpen(true)}} />
+                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={(e)=>{e.preventDefault(); setContent(<FormEditarCategoria id={item.id} close={close} setData={setData} data={data}/>); setOpen(true)}} />
                                     <img className='icon-acciones' src="/img/seleccion.svg" alt="" />
                                 </div>
                             </div>
@@ -48,14 +46,14 @@ export const TabCategorias = () => {
                             <div className="fila item-contenido-categoria mb-17" key={index}>
                                 <div className="col-3 jc-fs">
                                     <img src="" alt="" />
-                                    {producto.nombre} {index}
+                                    {producto.nombre}
                                 </div>
                                 <div className="col-3 jc-fs">{producto.codigo}</div>
-                                <div className="col-3 jc-fs">{producto.precio_final}</div>
+                                <div className="col-3 jc-fs">${producto.precio_final}</div>
                                 <div className="col-3 jc-sa">
                                     <img className='icon-acciones' src="/img/activo.svg" alt="" />
                                     <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
-                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={(e)=>{ setContent(<FormEditarProducto id={producto.id} close={close}/>); setOpen(true)}} />
+                                    <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={(e)=>{ setContent(<FormEditarProducto id={producto.id} close={close} data={data} setData={setData} />); setOpen(true)}} />
                                     <img className='icon-acciones' src="/img/borrar.svg" alt="" />
                                 </div>
                             </div>
@@ -90,7 +88,7 @@ export const TabCategorias = () => {
             <div className="fila">
                 <div className='col-4'> Categoría </div>
                 <div className='col-4'> Descripción </div>
-                <div className='col-4 jc-fe'> Acciones </div>
+                <div className='col-4 jc-c'> Acciones </div>
             </div>
             <Accordion>
                 {itemsCategoria}

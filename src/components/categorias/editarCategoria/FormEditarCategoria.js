@@ -1,19 +1,13 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import { useContext } from 'react';
-import { DataCartaContext } from '../../context/DataCartaContext';
+// import { useContext } from 'react';
+// import { DataCartaContext } from '../../context/DataCartaContext';
 import { Modal2doNivel } from '../../modal/Modal2doNivel';
 import { ResultadoPeticion } from '../../resultadoPeticion/ResultadoPeticion';
 
-export const FormEditarCategoria = ({close, id}) => {
+export const FormEditarCategoria = ({close, id, setData, data}) => {
     const [estadoPeticion, setEstadoPeticion] = useState(false);
     const [openResPeticion, setOpenResPeticion] = useState(false);
-    const {data, setData} = useContext(DataCartaContext);
-    const [newData, setNewData] = useState(data)
-
-    useEffect(() => {
-        setData(newData)
-    }, [newData])
     
     const [imgHabilitado, setImgHabilitado] = useState('/img/radio/habilitado-selected.svg');
     const [classHabilitado, setClassHabilitado] = useState('text-selected');
@@ -28,12 +22,14 @@ export const FormEditarCategoria = ({close, id}) => {
         imagen: "",
     };
     const [values, setValues] = useState(initialState)
+
     useEffect(() => {
         axios.get('http://127.0.0.1:8000/api/categoria/'+id)
         .then( res => {
             setValues(res.data)
         });
     }, [id])
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setValues({ ...values, [name]: value });
@@ -63,24 +59,14 @@ export const FormEditarCategoria = ({close, id}) => {
         e.preventDefault();
 
         axios.post('http://127.0.0.1:8000/api/categoria/'+id, values)
-        .then(function (res){
+        .then( function (res) {
             setEstadoPeticion(res.data);
             if(res.data)
             {
-                const newDatas = data.map((item)=>{
-                    if(item.id === id)
-                    {
-                        return {
-                            ...item,
-                            ...values
-                        };
-                    }
-                    else
-                    {
-                        return item;
-                    }
+                const dataUpdate = data.map( (item) => {
+                    return item.id === id ? { ...item, ...values } : item;
                 });
-                setNewData(newDatas);
+                setData(dataUpdate);
                 setOpenResPeticion(true)
             }
         }) 

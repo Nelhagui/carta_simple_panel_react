@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import './EdicionCarta.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { TabCombos } from './tabs/tabCombos/TabCombos';
 import {TabProductos} from './tabs/tabProductos/TabProductos';
 import {TabCategorias} from './tabs/tabCategorias/TabCategorias';
 
-export const EdicionCarta = () => {
+export const EdicionCarta = ({match}) => {
+
+    const [data, setData] = useState([])
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/api/carta/'+match.params.id)
+            .then(res => {
+                setData(res.data);
+            })
+    }, [match])
+    
     return (
         <div>
             <Tabs>
@@ -15,15 +25,15 @@ export const EdicionCarta = () => {
                     <Tab>Combos</Tab>
                 </TabList>
                 <TabPanel>
-                    <TabCategorias/>
+                    <TabCategorias data={data} setData={setData}/>
                 </TabPanel>
                 
                 <TabPanel>
-                    <TabProductos/>
+                    <TabProductos data={data} setData={setData}/>
                 </TabPanel>
 
                 <TabPanel>
-                    <TabCombos/>
+                    <TabCombos data={data} setData={setData}/>
                 </TabPanel>
             </Tabs>
         </div>

@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Modal2doNivel } from "../../../modal/Modal2doNivel";
+import { ResultadoPeticion } from "../../../resultadoPeticion/ResultadoPeticion";
 
-export const FormEditarProducto = ({id, close}) => {
-    
+export const FormEditarProducto = ({id, close, data, setData}) => {
+    const [estadoPeticion, setEstadoPeticion] = useState(false);
+    const [openResPeticion, setOpenResPeticion] = useState(false);
+
     const [celiaco, setCeliaco] = useState(false)
     const [vegano, setVegano] = useState(false)
     const [vegetariano, setVegetariano] = useState(false)
@@ -10,7 +14,7 @@ export const FormEditarProducto = ({id, close}) => {
     const initialState = {
         nombre: "",
         codigo: "",
-        precio: "",
+        precio_final: "",
         estado: "",
         descripcion: "",
         imagen: "",
@@ -24,44 +28,59 @@ export const FormEditarProducto = ({id, close}) => {
             })
     }, [id])
 
-    // const validaCampos = (e) => {
-    //     const { value, name } = e.target;
-    //     setValues({ ...values, [name]: value });
-    // };
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setValues({ ...values, [name]: value });
+    };
 
-    // const handleOnSubmit = (e) => {
-    //     e.preventDefault();
-    //     setValues(initialState);
-    // };
+    const handleOnSubmit = (e) => {
+        e.preventDefault();
+        axios.post('http://127.0.0.1:8000/api/producto/'+id, values)
+        .then( function (res) {
+            setEstadoPeticion(res.data);
+            if(res.data)
+            {
+                const dataUpdateP = data;
+                for (let i = 0; i < dataUpdateP.length; i++)
+                    if(dataUpdateP[i].productos.length > 0)
+                        for (let ii = 0; ii < dataUpdateP[i].productos.length; ii++)
+                            if(dataUpdateP[i].productos[ii].id === id)
+                                dataUpdateP[i].productos[ii] = { ...dataUpdateP[i].productos[ii], ...values }
+                setData(dataUpdateP);
+                setOpenResPeticion(true)
+            }
+        }) 
+    };
 
     return (
         <div>
+            <Modal2doNivel children={<ResultadoPeticion respuesta={estadoPeticion}/>} closee={()=>setOpenResPeticion(false)} openn={openResPeticion}/>
             <h1>Editá tu producto</h1>
-            <form>
+            <form onSubmit={handleOnSubmit}>
                 <div className='fila'>
                     <div className='col-6 fd-c'>
                         <div className="contenedor-input">
                             <label htmlFor="nombre" className="label">Nombre</label>
-                            <input className="cinput mt-17" type="text" name="nombre" placeholder="Escribe el nombre de tu carta" autoComplete="off" value={values.nombre}/>
+                            <input onChange={handleChange} value={values.nombre} className="cinput mt-17" type="text" name="nombre" placeholder="Escribe el nombre de tu carta" autoComplete="off" />
                         </div>
                         <div className="fila">
                             <div className='col-6'>
                                 <div className="contenedor-input">
                                     <label htmlFor="codigo" className="label">Código</label>
-                                    <input className="cinput mt-17" type="text" name="codigo" placeholder="Escribe el código de la categoría" autoComplete="off"/>
+                                    <input onChange={handleChange} value={values.codigo} className="cinput mt-17" type="text" name="codigo" placeholder="Escribe el código de la categoría" autoComplete="off"/>
                                 </div>
                             </div>
                             <div className='col-6'>
                                 <div className="contenedor-input">
                                     <label htmlFor="codigo" className="label">Precio</label>
-                                    <input className="cinput mt-17" type="text" name="codigo" placeholder="Escribe el código de la categoría" autoComplete="off"/>
+                                    <input onChange={handleChange} value={values.precio_final} className="cinput mt-17" type="text" name="precio_final" placeholder="Escribe el código de la categoría" autoComplete="off"/>
                                 </div>
                             </div>
                         </div>
                         {/* DESCRIPCION */}
                         <div className="contenedor-input">
                             <label htmlFor="descripcion" className="label">Descripción</label>
-                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                            <textarea onChange={handleChange} value={values.descripcion} name="descripcion" id="" cols="30" rows="10" />
                         </div>
                     </div>
                     <div className='col-6 fd-c ai-c jc-c'>

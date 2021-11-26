@@ -39,7 +39,7 @@ export const TabCombos = ({data}) => {
                     <div className="col-3 jc-sa">
                         <img className='icon-acciones' src="/img/activo.svg" alt="" />
                         <img className='icon-acciones' src="/img/icon-duplicar.svg" alt="" />
-                        <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={()=>{setContent(<FormEditarCombo close={close}/>); setOpen(true)} } />
+                        <img className='icon-acciones' src="/img/editar-base.svg" alt="" onClick={()=>{setContent(<FormEditarCombo id={combo.id} close={close}/>); setOpen(true)} } />
                         <img className='icon-acciones' src="/img/borrar.svg" alt="" />
                     </div>
                 </div>

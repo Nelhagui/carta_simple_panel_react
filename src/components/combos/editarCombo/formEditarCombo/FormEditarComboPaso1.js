@@ -5,12 +5,13 @@ export const FormEditarComboPaso1 = ({ values, close, siguiente}) => {
     const [celiaco, setCeliaco] = useState(false)
     const [vegano, setVegano] = useState(false)
     const [vegetariano, setVegetariano] = useState(false)
-    console.log(values)
+
     useEffect(() => {
         setCeliaco((values.apto.split(',')).includes("1") ? true : false)
         setVegano((values.apto.split(',')).includes("2") ? true : false)
         setVegetariano((values.apto.split(',')).includes("3") ? true : false)
     }, [values])
+    
     return (
         <div> 
             <h1>Editá tu combo</h1>

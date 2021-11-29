@@ -2,10 +2,20 @@ import React from 'react';
 import { useState } from 'react';
 import { SelectBuscador } from '../../../selectSearch/SelectBuscador';
 
-export const FormCrearComboPaso1 = ({close, siguiente}) => {
-    const [celiaco, setCeliaco] = useState(false)
-    const [vegano, setVegano] = useState(false)
-    const [vegetariano, setVegetariano] = useState(false)
+export const FormCrearComboPaso1 = (
+    {
+        close, 
+        siguiente, 
+        resultado, 
+        setResultado,
+        celiaco, 
+        setCeliaco,
+        vegano, 
+        setVegano,
+        vegetariano, 
+        setVegetariano
+    }) => {
+
 
     const initialState = {
         nombre: "",
@@ -74,12 +84,12 @@ export const FormCrearComboPaso1 = ({close, siguiente}) => {
                 </div>
                 <div className="contenedor-input mt-28">
                     <label htmlFor="categorias">Categoria</label>
-                    <input className="cinput mt-13 mb-23" type="text" name="categorias" placeholder="Escribe el nombre de la categoría" autoComplete="off"/>
-                    <div className="contenedor-items-seleccionados">
+                    {/* <input className="cinput mt-13 mb-23" type="text" name="categorias" placeholder="Escribe el nombre de la categoría" autoComplete="off"/> */}
+                    {/* <div className="contenedor-items-seleccionados">
                         <button type="button" className="btn-items-seleccionados"> <img src="/img/icon-sacar.svg" alt=""/> Desayuno</button>
                         <button type="button" className="btn-items-seleccionados"> <img src="/img/icon-sacar.svg" alt="" /> Merienda</button>
-                    </div>
-                    <SelectBuscador/>
+                    </div> */}
+                    <SelectBuscador resultado={resultado} setResultado={setResultado}/>
                 </div>
 
                 <div className='fila'>

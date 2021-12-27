@@ -1,12 +1,14 @@
 .cont-buscador {
+    padding-left: 22px;
+    padding-top: 29px;
+    padding-bottom: 31px;
+    margin-top: 43px;
+    margin-bottom: 58px;
     background: linear-gradient(0deg, #EDF2F5, #EDF2F5);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 2rem 0;
-    padding: 1rem;
-
 }
 .buscador {
     height: 40px;

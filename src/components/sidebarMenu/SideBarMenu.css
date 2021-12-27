@@ -1,7 +1,8 @@
 
 .content_sidebarnav {
-    max-width: 250px;
-    display: flex;
+    z-index: 999;
+    position: relative;
+    min-width: 25%;
     height: 100%;
     background: #FFFFFF;
     box-shadow: 3px 0px 3px rgba(196, 196, 196, 0.17);
@@ -20,17 +21,14 @@
     align-items: flex-start;
 }
 .content_sidebarnav ul {
-    padding: 0 10px;
-    display: flex;
-    align-content: center;
-    justify-content: flex-start;
-    flex-direction: column;
+    margin-left: 26px;
 }
 
 .content_sidebarnav .logo-sidebar{
-    width: auto;
-    height: 60px;
-    padding: 2rem;
+    max-width: 186px;
+    margin-bottom: 61px;
+    margin-top: 54px;
+    margin-left: 74px;
 }
 
 .nav_items a {
@@ -38,28 +36,27 @@
     font-weight: 700;
 }
 .nav_items .cont-icon-menu {
-    width: auto;
+    height: 51px;
+    width: 50px;
     background: #FFFFFF;
-    box-shadow: 0px 0px 2px rgb(0 0 0 / 25%);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     display: flex;
     align-items: center;
-    padding: 10px;
     justify-content: center;
+    margin-left: 15px;
+    margin-right: 29px;
 }
 .nav_items img{
-    width: auto;
-    height: 21px;
-}
-.nav_items a li span{
-    font-size: 0.9rem;
-    padding: 0 15px;
+    max-width: 21.5px;
+    max-height: 21.5px;
 }
 .nav_items li {
-    padding: 10px 15px;
+    width: 337px;
+    height: 77px;
+    list-style: none;
     display: flex;
     align-items: center;
-    margin: 5px 0;
 }
 .item-active li{
     background: linear-gradient(90deg, #FFE7E0 2.58%, rgba(255, 240, 235, 0) 100%);

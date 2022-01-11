@@ -23,11 +23,11 @@ export const SideBarMenu = () => {
                             <div className='cont-icon-menu'><img src="/img/navbar/cartas.svg" alt=""/></div> CARTAS
                         </li>
                     </NavLink>
-                    <NavLink to="/pedidos" activeClassName="item-active">
+                    {/* <NavLink to="/pedidos" activeClassName="item-active">
                         <li>
                             <div className='cont-icon-menu'><img src="/img/navbar/pedidos.svg" alt=""/></div> PEDIDOS
                         </li>
-                    </NavLink>
+                    </NavLink> */}
                 </ul>
             </nav>
         </div>

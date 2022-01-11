@@ -146,7 +146,7 @@ h1 {
 
     .btn-primario, .btn-secundario  { min-width: 210px; border-radius: 16px; min-height: 45px; cursor: pointer;}
 
-    .btn-dia-horarios { background: #FFFFFF; border: 1px solid #C4C4C4; box-sizing: border-box; border-radius: 16px; width: 50px; height: 45px; color: #000000; line-height: 19px; }
+    .btn-dia-horarios { background: #FFFFFF; border: 1px solid #C4C4C4; box-sizing: border-box; border-radius: 16px; width: 50px; height: 45px; color: #000000; line-height: 19px; padding: 13px 10px;}
     .btn-dia-horarios.seleccionado {background: #EB6F65; color: #FFFFFF; border: none;}
 
     .btn-detalle-pedido { background: rgba(196, 196, 196, 0.4); border-radius: 10px; border: none; height: 30px; padding: 5px 22px; }

@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 
-export const DiasHoras = ({diasHoras}) => {
-    const dias = diasHoras.horarios.map(el => el.dia)
-    console.log(diasHoras);
-    console.log(dias.includes(3));
+export const DiasHoras = ({diasHoras, setDiasHoras}) => {
+
+    // console.log(diasHoras.horarios);
     
+    const dias = diasHoras !== undefined ? diasHoras.horarios.map(el => el.dia) : [];
+    const [ver, setVer] = useState([])
     const [lunes, setLunes] = useState(dias.includes(1));
     const [martes, setMartes] = useState(dias.includes(2));
     const [miercoles, setMiercoles] = useState(dias.includes(3));
@@ -12,12 +13,28 @@ export const DiasHoras = ({diasHoras}) => {
     const [viernes, setViernes] = useState(dias.includes(5));
     const [sabado, setSabado] = useState(dias.includes(6));
     const [domingo, setDomingo] = useState(dias.includes(7));
+    const onChangeDay = (e) => {
+
+        if(e.target.checked)
+        {
+            setVer([...ver, {dia: Number(e.target.value)}]);
+        }
+        else
+        {
+            console.log(diasHoras.horarios)
+
+            const newHorario = diasHoras.horarios.filter(item => Number(item.dia) !== Number(e.target.value));
+            setVer(newHorario)
+
+        }
+    }
+    console.log(ver);
     return (
         <>
             {/* LUNES */}
             <div className='fila'>
                 <div className='col-1'>
-                    <input type="checkbox" id='lunes' name='dias[]' onChange={ () => {setLunes(!lunes)}} checked={lunes} value='1' />
+                    <input type="checkbox" id='lunes' name='dias[]' onChange={ (e) => { setLunes(!lunes); onChangeDay(e) }} checked={lunes} value='1' />
                     <label type='button' htmlFor="lunes" className={lunes ? 'btn-dia-horarios seleccionado': "btn-dia-horarios"} >Lun</label>
                 </div>
                 <div className='col-9 fd-c'>
@@ -56,7 +73,7 @@ export const DiasHoras = ({diasHoras}) => {
             {/* MARTES */}
             <div className='fila'>
                 <div className='col-1'>
-                    <input type="checkbox" id='martes' name='dias[]' onChange={ () => {setMartes(!martes)}} checked={martes} value='2' />
+                    <input type="checkbox" id='martes' name='dias[]' onChange={ (e) => {setMartes(!martes); onChangeDay(e) }} checked={martes} value='2' />
                     <label type='button' htmlFor="martes" className={martes ? 'btn-dia-horarios seleccionado': "btn-dia-horarios"} >Mar</label>
                 </div>
                 <div className='col-9 fd-c'>

@@ -34,7 +34,7 @@ export const CrearDiasHorarios = () => {
                             'horarios':
                                 [
                                     { 
-                                        'dia': 1, 
+                                        'dia': 2, 
                                         'horario': 
                                         [
                                             {'desde': '08:30', 'hasta': '15:00'},
@@ -42,7 +42,7 @@ export const CrearDiasHorarios = () => {
                                         ]
                                     },
                                     { 
-                                        'dia': 2, 
+                                        'dia': 4, 
                                         'horario': 
                                         [
                                             {'desde': '08:30', 'hasta': '15:00'},
@@ -69,13 +69,13 @@ export const CrearDiasHorarios = () => {
                         <Tab>En el local</Tab>
                     </TabList>
                     <TabPanel>
-                        <DiasHoras diasHoras={horarios.find( item => item.modalidad === 1)}/>
+                        <DiasHoras diasHoras={horarios.find( item => item.modalidad === 1)} setDiashorarios={setDiashorarios} />
                     </TabPanel>
                     <TabPanel>
-                        {/* <DiasHoras dias={diasHorarios.takeAway.dias}/> */}
+                        <DiasHoras diasHoras={horarios.find( item => item.modalidad === 2)} setDiashorarios={setDiashorarios} />
                     </TabPanel>
                     <TabPanel>
-                        {/* <DiasHoras dias={diasHorarios.enLocal.dias}/> */}
+                        <DiasHoras diasHoras={horarios.find( item => item.modalidad === 3)} setDiashorarios={setDiashorarios} />
                     </TabPanel>
                 </Tabs>
             </div>
